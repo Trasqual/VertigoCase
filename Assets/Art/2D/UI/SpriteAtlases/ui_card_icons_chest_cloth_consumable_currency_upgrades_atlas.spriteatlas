@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ui_card_icons_chest_cloth_consumable_currency_upgrades_atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a46a85a6cf6016e41b78827d6a3c3cc9, type: 3}
+    - {fileID: 2800000, guid: fa55cd4d474c36643a0ae9ac2835240e, type: 3}
+    - {fileID: 2800000, guid: ce1778231ddcf714296144cd4f73bb60, type: 3}
+    - {fileID: 2800000, guid: fb5a669545b99a842a172a3f4120b048, type: 3}
+    - {fileID: 2800000, guid: 7f3cd531883ed474f91cd545ee6497e0, type: 3}
+    - {fileID: 2800000, guid: ae118380a949d8346a77e34a5d6b722f, type: 3}
+    - {fileID: 2800000, guid: b11deee1480efa649a24c93a23a0cf1c, type: 3}
+    - {fileID: 2800000, guid: d228770b5e21d624dbcc1986775fe44b, type: 3}
+    - {fileID: 2800000, guid: df76512a6963a8b41949ee31c63bffe0, type: 3}
+    - {fileID: 2800000, guid: eb7de9322fe759e42b46a3e03b5fe10b, type: 3}
+    - {fileID: 2800000, guid: 250028fc28926384fb0478368306d8e0, type: 3}
+    - {fileID: 2800000, guid: 60c389b4f7560af4288a982d8f547123, type: 3}
+    - {fileID: 2800000, guid: ec80a5a28f5c41545a58531495acdee9, type: 3}
+    - {fileID: 2800000, guid: 80abae207637c20418acea84b058b4da, type: 3}
+    - {fileID: 2800000, guid: 1571648cdf185014db869d375897d122, type: 3}
+    - {fileID: 2800000, guid: 10117333e61d28c4fa115d46bf8867e6, type: 3}
+    - {fileID: 2800000, guid: 60bc56f0dd9cea54999ca85feb892225, type: 3}
+    - {fileID: 2800000, guid: ec1faf30529b39d4f9d85883867952bc, type: 3}
+    - {fileID: 2800000, guid: 062723b0d6bb4ff47b590a46f79bf043, type: 3}
+    - {fileID: 2800000, guid: 2bb2e6947a345b34fa32c7adea906c59, type: 3}
+    - {fileID: 2800000, guid: 27078646fa117ec4f977eb9a99e6ec3e, type: 3}
+    - {fileID: 2800000, guid: bdeb084ecd8f6af43b037904e3b1cb20, type: 3}
+    - {fileID: 2800000, guid: 11ec98288af74224ba16193802f9d7c4, type: 3}
+    - {fileID: 2800000, guid: d6db8a09564d423479e72fcf3dfca70c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 80abae207637c20418acea84b058b4da, type: 3}
+  - {fileID: 21300000, guid: ec1faf30529b39d4f9d85883867952bc, type: 3}
+  - {fileID: 21300000, guid: ae118380a949d8346a77e34a5d6b722f, type: 3}
+  - {fileID: 21300000, guid: 062723b0d6bb4ff47b590a46f79bf043, type: 3}
+  - {fileID: 21300000, guid: 60bc56f0dd9cea54999ca85feb892225, type: 3}
+  - {fileID: 21300000, guid: 7f3cd531883ed474f91cd545ee6497e0, type: 3}
+  - {fileID: 21300000, guid: b11deee1480efa649a24c93a23a0cf1c, type: 3}
+  - {fileID: 21300000, guid: eb7de9322fe759e42b46a3e03b5fe10b, type: 3}
+  - {fileID: 21300000, guid: ec80a5a28f5c41545a58531495acdee9, type: 3}
+  - {fileID: 21300000, guid: ce1778231ddcf714296144cd4f73bb60, type: 3}
+  - {fileID: 21300000, guid: 10117333e61d28c4fa115d46bf8867e6, type: 3}
+  - {fileID: 21300000, guid: 2bb2e6947a345b34fa32c7adea906c59, type: 3}
+  - {fileID: 21300000, guid: 60c389b4f7560af4288a982d8f547123, type: 3}
+  - {fileID: 21300000, guid: fb5a669545b99a842a172a3f4120b048, type: 3}
+  - {fileID: 21300000, guid: 27078646fa117ec4f977eb9a99e6ec3e, type: 3}
+  - {fileID: 21300000, guid: a46a85a6cf6016e41b78827d6a3c3cc9, type: 3}
+  - {fileID: 21300000, guid: 11ec98288af74224ba16193802f9d7c4, type: 3}
+  - {fileID: 21300000, guid: d6db8a09564d423479e72fcf3dfca70c, type: 3}
+  - {fileID: 21300000, guid: df76512a6963a8b41949ee31c63bffe0, type: 3}
+  - {fileID: 21300000, guid: d228770b5e21d624dbcc1986775fe44b, type: 3}
+  - {fileID: 21300000, guid: 1571648cdf185014db869d375897d122, type: 3}
+  - {fileID: 21300000, guid: 250028fc28926384fb0478368306d8e0, type: 3}
+  - {fileID: 21300000, guid: fa55cd4d474c36643a0ae9ac2835240e, type: 3}
+  - {fileID: 21300000, guid: bdeb084ecd8f6af43b037904e3b1cb20, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - UI_icon_gold
+  - UI_Icons_Pistol_Points_
+  - UI_icon_chest_standart_nolight
+  - UI_Icons_Rifle_Points
+  - UI_Icons_Pistol_Points
+  - UI_icon_chest_small_noligt
+  - UI_icon_chest_super_nolight
+  - ui_icon_helmet_pumpkin
+  - UI_icon_cash
+  - UI_icon_chest_gold_nolight
+  - UI_Icons_Knife_Points
+  - UI_Icons_Shotgun_Points
+  - ui_icon_render_cons_healthshot_2_regenerator
+  - UI_icon_chest_silver_nolight
+  - UI_Icons_SMG_Points
+  - UI_icon_chest_big_nolight
+  - UI_Icons_Submachine_Points
+  - UI_Icons_Vest_Points
+  - ui_icon_baseball_cap_easter
+  - ui_icon_aviator_glasses_easter
+  - UI_Icons_Armor_Points
+  - ui_icon_render_cons_healthshot_2_neurostim
+  - UI_icon_chest_Bronze_nolight
+  - UI_Icons_Sniper_Points
+  m_RenderDataMap: {}
+  m_Tag: ui_card_icons_chest_cloth_consumable_currency_upgrades_atlas
+  m_IsVariant: 0
