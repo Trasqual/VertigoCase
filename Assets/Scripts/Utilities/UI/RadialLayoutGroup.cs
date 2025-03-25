@@ -17,6 +17,7 @@ namespace Utilities.UI
         public override void CalculateLayoutInputVertical() {}
         public override void SetLayoutHorizontal() {}
         public override void SetLayoutVertical() => ArrangeChildren();
+        
         private void ArrangeChildren()
         {
             if (transform.childCount == 0) return;
