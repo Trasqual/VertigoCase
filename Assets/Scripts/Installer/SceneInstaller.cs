@@ -1,5 +1,7 @@
+using PoolingSystem;
 using RewardSystem;
 using ServiceLocatorSystem;
+using UISystem.Core;
 using UnityEngine;
 
 namespace Installer
@@ -9,6 +11,8 @@ namespace Installer
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Install()
         {
+            ServiceLocator.Instance.RegisterService(new ObjectPoolManager());
+            ServiceLocator.Instance.RegisterService(new UIManager());
             ServiceLocator.Instance.RegisterService(new RewardManager());
         }
     }
