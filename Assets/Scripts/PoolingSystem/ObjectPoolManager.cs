@@ -11,6 +11,11 @@ namespace PoolingSystem
 
         private Transform _poolContainer;
 
+        public ObjectPoolManager()
+        {
+            Initialize();
+        }
+
         public void Initialize()
         {
             if (_poolContainer == null)

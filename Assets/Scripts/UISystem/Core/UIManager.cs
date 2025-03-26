@@ -13,6 +13,11 @@ namespace UISystem.Core
         private List<UIPanel> _activePanels;
         
         private ObjectPoolManager _poolManager;
+
+        public UIManager()
+        {
+            Initialize();
+        }
         
         public void Initialize()
         {
