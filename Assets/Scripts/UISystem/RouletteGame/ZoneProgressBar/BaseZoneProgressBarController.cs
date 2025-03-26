@@ -14,13 +14,11 @@ namespace UISystem.RouletteGame.ZoneProgressBar
 
         protected readonly List<ZoneProgressItem> _zoneItems = new();
         protected List<ZoneData> _zoneDatas = new();
-        protected int _currentZoneIndex;
         protected ObjectPoolManager _poolManager;
 
         public void Initialize(List<ZoneData> zoneDatas)
         {
             _zoneDatas = zoneDatas;
-            _currentZoneIndex = 0;
             _poolManager = ServiceLocator.Instance.Get<ObjectPoolManager>();
             SetupItems();
         }
@@ -36,6 +34,6 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             _zoneItems.Add(zoneItem);
         }
 
-        public abstract void OnProgress();
+        public abstract void OnProgress(int currentIndex);
     }
 }

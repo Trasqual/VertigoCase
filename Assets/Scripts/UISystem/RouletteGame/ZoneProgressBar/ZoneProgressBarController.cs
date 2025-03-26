@@ -10,16 +10,14 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             }
         }
 
-        public override void OnProgress()
+        public override void OnProgress(int currentIndex)
         {
-            _currentZoneIndex++;
-
-            if (_currentZoneIndex >= _zoneDatas.Count)
+            if (currentIndex >= _zoneDatas.Count)
             {
                 return;
             }
 
-            _scrollAnimation.ScrollToObject(_currentZoneIndex, 1f);
+            _scrollAnimation.ScrollToObject(currentIndex, 1f);
         }
     }
 }
