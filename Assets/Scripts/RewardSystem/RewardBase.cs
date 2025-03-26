@@ -12,6 +12,8 @@ namespace RewardSystem
         [SerializeField] private SpriteAtlas _atlas;
 
         public Sprite Icon => _atlas.GetSprite(_iconName);
+        
+        public abstract string GetValueText();
 
         public abstract void Claim();
     }

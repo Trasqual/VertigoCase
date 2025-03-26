@@ -17,7 +17,7 @@ namespace UISystem.RouletteGame.Data
         
         [field: SerializeField] public SpriteAtlas Atlas { get; private set; }
 
-        [field: SerializeField] public List<RewardData> RewardDatas { get; private set; }
+        [field: SerializeField] public List<RewardBase> Rewards { get; private set; }
 
         public Sprite GetBackgroundSprite() => Atlas.GetSprite(ZoneBackgroundSpriteName);
     }

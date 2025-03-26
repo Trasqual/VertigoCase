@@ -6,5 +6,10 @@ namespace RewardSystem
     public class ConsumableRewardBase : ItemRewardBase
     {
         [field: SerializeField] public int Amount { get; private set; }
+        
+        public override string GetValueText()
+        {
+            return Amount.ToString();
+        }
     }
 }
