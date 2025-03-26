@@ -247,4 +247,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <PoolID>k__BackingField: ZoneProgressItem
-  _iconAtlas: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
+  _atlas: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}

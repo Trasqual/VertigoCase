@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: ZoneData 10
   m_EditorClassIdentifier: 
   <ZoneType>k__BackingField: 2
+  <ZoneName>k__BackingField: Super Zone
+  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_super
+  <ZoneTitle>k__BackingField: GOLDEN SPIN!
+  <ZoneDescription>k__BackingField: 
+  <Atlas>k__BackingField: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
   <RewardDatas>k__BackingField: []

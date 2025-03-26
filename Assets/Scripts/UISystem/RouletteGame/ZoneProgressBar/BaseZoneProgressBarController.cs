@@ -6,7 +6,7 @@ using Utilities.UI;
 
 namespace UISystem.RouletteGame.ZoneProgressBar
 {
-    public abstract class BaseZoneProgressBarController : MonoBehaviour
+    public abstract class BaseZoneProgressBarController : RouletteGameElementBase
     {
         [SerializeField] protected ZoneProgressItem _zoneItemPrefab;
         [SerializeField] protected ScrollRectAnimation _scrollAnimation;
@@ -16,7 +16,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
         protected List<ZoneData> _zoneDatas = new();
         protected ObjectPoolManager _poolManager;
 
-        public void Initialize(List<ZoneData> zoneDatas)
+        public override void Initialize(List<ZoneData> zoneDatas)
         {
             _zoneDatas = zoneDatas;
             _poolManager = ServiceLocator.Instance.Get<ObjectPoolManager>();
@@ -30,10 +30,10 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             ZoneData data = _zoneDatas[zoneNo];
             ZoneProgressItem zoneItem = _poolManager.GetObject(_zoneItemPrefab, parent: _content);
             zoneItem.transform.localScale = Vector3.one;
-            zoneItem.Initialize(data.ZoneType, zoneNo + 1);
+            zoneItem.Initialize(data, zoneNo + 1);
             _zoneItems.Add(zoneItem);
         }
 
-        public abstract void OnProgress(int currentIndex);
+        public abstract override void OnProgress(int currentIndex);
     }
 }

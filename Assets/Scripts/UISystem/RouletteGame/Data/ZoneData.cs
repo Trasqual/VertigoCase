@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using RewardSystem;
 using UnityEngine;
+using UnityEngine.U2D;
 
 namespace UISystem.RouletteGame
 {
@@ -9,10 +10,15 @@ namespace UISystem.RouletteGame
     {
         [field: SerializeField] public ZoneType ZoneType { get; private set; }
         
+        [field: SerializeField] public string ZoneName { get; private set; }
+        [field: SerializeField] public string ZoneBackgroundSpriteName { get; private set; }
         [field: SerializeField] public string ZoneTitle { get; private set; }
-        
         [field: SerializeField] public string ZoneDescription { get; private set; }
         
+        [field: SerializeField] public SpriteAtlas Atlas { get; private set; }
+
         [field: SerializeField] public List<RewardData> RewardDatas { get; private set; }
+
+        public Sprite GetBackgroundSprite() => Atlas.GetSprite(ZoneBackgroundSpriteName);
     }
 }

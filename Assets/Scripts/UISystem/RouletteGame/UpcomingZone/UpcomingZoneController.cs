@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 namespace UISystem.RouletteGame.UpcomingZone
 {
-    public class UpcomingZoneController : MonoBehaviour
+    public class UpcomingZoneController : RouletteGameElementBase
     {
         [FormerlySerializedAs("_upcomingZoneItemPrefab")][SerializeField] private UpcomingZoneInfoItem _upcomingZoneInfoItemPrefab;
 
@@ -16,7 +16,7 @@ namespace UISystem.RouletteGame.UpcomingZone
 
         private ObjectPoolManager _poolManager;
 
-        public void Initialize(List<ZoneData> zoneDatas)
+        public override void Initialize(List<ZoneData> zoneDatas)
         {
             _zoneDatas = zoneDatas;
 
@@ -25,7 +25,7 @@ namespace UISystem.RouletteGame.UpcomingZone
             OnProgress(0);
         }
 
-        public void OnProgress(int currentIndex)
+        public override void OnProgress(int currentIndex)
         {
             ClearItems();
             int foundCount = 0;
@@ -35,7 +35,7 @@ namespace UISystem.RouletteGame.UpcomingZone
                 if (_zoneDatas[i].ZoneType is ZoneType.Safe or ZoneType.Super)
                 {
                     UpcomingZoneInfoItem upcomingZoneInfoItem = _poolManager.GetObject(_upcomingZoneInfoItemPrefab, parent: transform);
-                    upcomingZoneInfoItem.Initialize(_zoneDatas[i].ZoneType, i + 1);
+                    upcomingZoneInfoItem.Initialize(_zoneDatas[i], i + 1);
                     _upcomingZoneItems.Add(upcomingZoneInfoItem);
             
                     foundCount++;

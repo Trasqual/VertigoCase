@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3885669375763659871, guid: ca737d4627118da4f8a38fae9c001992, type: 3}
+      propertyPath: _atlas
+      value: 
+      objectReference: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
     - target: {fileID: 9123220169532358123, guid: ca737d4627118da4f8a38fae9c001992, type: 3}
       propertyPath: m_FlexibleWidth
       value: -1

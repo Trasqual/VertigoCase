@@ -10,24 +10,24 @@ namespace UISystem.RouletteGame.ZoneProgressBar
     {
         [field: SerializeField] public string PoolID { get; private set; }
 
-        [SerializeField] private SpriteAtlas _iconAtlas;
+        [SerializeField] private SpriteAtlas _atlas;
 
         public Component Component => this;
-        
+
         private TMP_Text _text;
 
         private Image _backgroundImage;
 
-        private ZoneType _zoneType;
+        private ZoneData _zoneData;
 
         private int _index;
 
-        public void Initialize(ZoneType type, int zoneNo)
+        public void Initialize(ZoneData zoneData, int zoneNo)
         {
             _text = GetComponentInChildren<TMP_Text>();
             _backgroundImage = GetComponent<Image>();
 
-            _zoneType = type;
+            _zoneData = zoneData;
             _index = zoneNo;
 
             UpdateVisuals();
@@ -36,13 +36,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
         private void UpdateVisuals()
         {
             _text.SetText(_index.ToString());
-            _backgroundImage.sprite = _zoneType switch
-            {
-                    ZoneType.Regular => _iconAtlas.GetSprite("ui_card_panel_zone_white"),
-                    ZoneType.Safe => _iconAtlas.GetSprite("ui_card_panel_zone_current"),
-                    ZoneType.Super => _iconAtlas.GetSprite("ui_card_panel_zone_super"),
-                    _ => _backgroundImage.sprite
-            };
+            _backgroundImage.sprite = _zoneData.GetBackgroundSprite();
         }
 
         public void OnSpawn()

@@ -1,6 +1,7 @@
 using PoolingSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UISystem.RouletteGame.UpcomingZone
 {
@@ -10,13 +11,16 @@ namespace UISystem.RouletteGame.UpcomingZone
 
         [SerializeField] private TMP_Text _zoneTypeText;
         [SerializeField] private TMP_Text _zoneNoText;
-
+        
+        [SerializeField] private Image _backgroundImage;
+        
         public Component Component => this;
 
-        public void Initialize(ZoneType zoneType, int zoneNo)
+        public void Initialize(ZoneData zoneData, int zoneNo)
         {
-            _zoneTypeText.SetText(zoneType.ToString());
+            _zoneTypeText.SetText(zoneData.ZoneName);
             _zoneNoText.SetText(zoneNo.ToString());
+            _backgroundImage.sprite = zoneData.GetBackgroundSprite();
         }
 
         public void OnSpawn()

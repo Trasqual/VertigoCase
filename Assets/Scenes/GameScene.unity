@@ -2602,7 +2602,7 @@ GameObject:
   - component: {fileID: 586877337}
   - component: {fileID: 586877338}
   m_Layer: 5
-  m_Name: ui_aspectfitparent_frame_currentzone
+  m_Name: ui_currentzonebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3216,7 +3216,7 @@ GameObject:
   - component: {fileID: 838095171}
   - component: {fileID: 838095173}
   m_Layer: 5
-  m_Name: ui_scrollview_currentzone
+  m_Name: ui_scrollview_currentzonebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4737,8 +4737,8 @@ RectTransform:
   m_Children:
   - {fileID: 1228959067}
   - {fileID: 1365751935}
-  - {fileID: 2140716370}
   - {fileID: 1665723823}
+  - {fileID: 2140716370}
   - {fileID: 1463105764}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -4771,9 +4771,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 915b69b90ad4de042a16b9726e56035d, type: 2}
   - {fileID: 11400000, guid: 3770489e9ab63d04ca30324a147412bf, type: 2}
   - {fileID: 11400000, guid: 9a86ce2842941b949b6333e48b467270, type: 2}
-  _zoneProgressBarController: {fileID: 1365751938}
-  _zoneCurrentBarController: {fileID: 586877338}
-  _upcomingZoneController: {fileID: 1665723827}
+  _rouletteGameElements:
+  - {fileID: 1365751938}
+  - {fileID: 586877338}
+  - {fileID: 1665723827}
 --- !u!1 &1269960013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4845,7 +4846,7 @@ GameObject:
   - component: {fileID: 1328038507}
   - component: {fileID: 1328038506}
   m_Layer: 5
-  m_Name: ui_viewport_currentzone
+  m_Name: ui_viewport_currentzonebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5854,7 +5855,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1256520723}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6740,7 +6741,7 @@ GameObject:
   - component: {fileID: 1986640918}
   - component: {fileID: 1986640919}
   m_Layer: 5
-  m_Name: ui_conent_currentzone
+  m_Name: ui_conent_currentzonebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7323,7 +7324,7 @@ GameObject:
   - component: {fileID: 2101129338}
   - component: {fileID: 2101129340}
   m_Layer: 5
-  m_Name: ui_image_frame_currentzone
+  m_Name: ui_image_frame_currentzonebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7568,7 +7569,7 @@ RectTransform:
   m_Children:
   - {fileID: 74285811}
   m_Father: {fileID: 1256520723}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.022395832, y: 0.1}
   m_AnchorMax: {x: 0.22239584, y: 0.8111111}

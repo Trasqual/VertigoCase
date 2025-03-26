@@ -8,6 +8,8 @@ namespace Utilities.UI
     [RequireComponent(typeof(ScrollRect))]
     public class ScrollRectAnimation : MonoBehaviour
     {
+        [SerializeField] private Ease _ease = Ease.Linear;
+
         private ScrollRect _scrollRect;
 
         private LayoutGroup _layoutGroup;
@@ -47,9 +49,10 @@ namespace Utilities.UI
                     spacing = horizontalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.x, -scrollPos, duration, value => 
-                                            _content.localPosition = new Vector3(value, _content.localPosition.y, _content.localPosition.z))
-                             .OnComplete(()=> onComplete?.Invoke());
+                    DOVirtual.Float(_content.localPosition.x, -scrollPos, duration,
+                                    value => _content.localPosition = new Vector3(value, _content.localPosition.y, _content.localPosition.z))
+                             .SetEase(_ease)
+                             .OnComplete(() => onComplete?.Invoke());
                     break;
 
                 case VerticalLayoutGroup verticalLayoutGroup:
@@ -57,9 +60,10 @@ namespace Utilities.UI
                     spacing = verticalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.y, -scrollPos, duration, value => 
-                                            _content.localPosition = new Vector3(_content.localPosition.x, value, _content.localPosition.z))
-                             .OnComplete(()=> onComplete?.Invoke());
+                    DOVirtual.Float(_content.localPosition.y, -scrollPos, duration,
+                                    value => _content.localPosition = new Vector3(_content.localPosition.x, value, _content.localPosition.z))
+                             .SetEase(_ease)
+                             .OnComplete(() => onComplete?.Invoke());
                     break;
             }
         }
