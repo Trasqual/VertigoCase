@@ -13,7 +13,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
         [SerializeField] private SpriteAtlas _iconAtlas;
 
         public Component Component => this;
-
+        
         private TMP_Text _text;
 
         private Image _backgroundImage;

@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 9123220169532358123, guid: ca737d4627118da4f8a38fae9c001992, type: 3}
+      propertyPath: m_FlexibleWidth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123220169532358123, guid: ca737d4627118da4f8a38fae9c001992, type: 3}
       propertyPath: m_PreferredWidth
       value: 116
       objectReference: {fileID: 0}

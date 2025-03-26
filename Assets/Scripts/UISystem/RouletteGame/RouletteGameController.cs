@@ -8,7 +8,8 @@ namespace UISystem.RouletteGame
     {
         [SerializeField] private List<ZoneData> _zoneDatas = new();
 
-        [SerializeField] private ZoneProgressBarController _zoneProgressBarController;
+        [SerializeField] private BaseZoneProgressBarController _zoneProgressBarController;
+        [SerializeField] private BaseZoneProgressBarController _zoneCurrentBarController;
 
         private int _currentZoneIndex;
 
@@ -17,7 +18,15 @@ namespace UISystem.RouletteGame
             if (_zoneProgressBarController != null)
             {
                 _zoneProgressBarController.Initialize(_zoneDatas);
+                _zoneCurrentBarController.Initialize(_zoneDatas);
             }
+        }
+
+        [ContextMenu("Progress")]
+        public void OnProgress()
+        {
+            _zoneProgressBarController.OnProgress();
+            _zoneCurrentBarController.OnProgress();
         }
     }
 }
