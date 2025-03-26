@@ -17,7 +17,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
                 return;
             }
 
-            _scrollAnimation.ScrollToObject(currentIndex, 1f);
+            _scrollAnimation.ScrollToObject(currentIndex);
         }
     }
 }

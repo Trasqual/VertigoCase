@@ -959,6 +959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2044cd0ece746af97c7d97d099ade9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollAnimationSettings: {fileID: 11400000, guid: 6618a2d73a645cd41a5a2b9adb570063, type: 2}
 --- !u!1 &176902414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,6 +3300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2044cd0ece746af97c7d97d099ade9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollAnimationSettings: {fileID: 11400000, guid: 6618a2d73a645cd41a5a2b9adb570063, type: 2}
 --- !u!1 &862203359
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,6 +4762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47efb04863b93cc4c8acc36b61024e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _exitButton: {fileID: 1425792781}
   _zoneDatas:
   - {fileID: 11400000, guid: e37eb3bc5600bc0488401df94b98a3ae, type: 2}
   - {fileID: 11400000, guid: 305e70f0ffa6a0748a3bc87415e9158e, type: 2}

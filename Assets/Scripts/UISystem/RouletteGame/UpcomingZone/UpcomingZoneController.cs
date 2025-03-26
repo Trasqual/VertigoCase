@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using PoolingSystem;
 using ServiceLocatorSystem;
+using UISystem.RouletteGame.Data;
 using UnityEngine;
 using UnityEngine.Serialization;
 

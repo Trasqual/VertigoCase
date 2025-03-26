@@ -3,7 +3,7 @@ using RewardSystem;
 using UnityEngine;
 using UnityEngine.U2D;
 
-namespace UISystem.RouletteGame
+namespace UISystem.RouletteGame.Data
 {
     [CreateAssetMenu(fileName = "ZoneData", menuName = "RouletteGame/ZoneData")]
     public class ZoneData : ScriptableObject

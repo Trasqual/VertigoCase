@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using UISystem.RouletteGame.Data;
 using UnityEngine;
 
 namespace UISystem.RouletteGame

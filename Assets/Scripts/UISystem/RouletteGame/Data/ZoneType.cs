@@ -1,4 +1,4 @@
-namespace UISystem.RouletteGame
+namespace UISystem.RouletteGame.Data
 {
     public enum ZoneType
     {

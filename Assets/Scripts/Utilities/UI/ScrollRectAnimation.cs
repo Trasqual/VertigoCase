@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using UISystem.RouletteGame.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,7 @@ namespace Utilities.UI
     [RequireComponent(typeof(ScrollRect))]
     public class ScrollRectAnimation : MonoBehaviour
     {
-        [SerializeField] private Ease _ease = Ease.Linear;
+        [SerializeField] private ScrollAnimationSettings _scrollAnimationSettings;
 
         private ScrollRect _scrollRect;
 
@@ -22,7 +23,7 @@ namespace Utilities.UI
             _content = _scrollRect.content;
         }
 
-        public void ScrollToObject(int index, float duration, Action onComplete = null)
+        public void ScrollToObject(int index, Action onComplete = null)
         {
             if (index < 0 || index >= _scrollRect.content.childCount || _scrollRect.content.childCount == 0)
             {
@@ -49,9 +50,9 @@ namespace Utilities.UI
                     spacing = horizontalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.x, -scrollPos, duration,
+                    DOVirtual.Float(_content.localPosition.x, -scrollPos, _scrollAnimationSettings.Duration,
                                     value => _content.localPosition = new Vector3(value, _content.localPosition.y, _content.localPosition.z))
-                             .SetEase(_ease)
+                             .SetEase(_scrollAnimationSettings.Ease)
                              .OnComplete(() => onComplete?.Invoke());
                     break;
 
@@ -60,9 +61,9 @@ namespace Utilities.UI
                     spacing = verticalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.y, -scrollPos, duration,
+                    DOVirtual.Float(_content.localPosition.y, -scrollPos, _scrollAnimationSettings.Duration,
                                     value => _content.localPosition = new Vector3(_content.localPosition.x, value, _content.localPosition.z))
-                             .SetEase(_ease)
+                             .SetEase(_scrollAnimationSettings.Ease)
                              .OnComplete(() => onComplete?.Invoke());
                     break;
             }

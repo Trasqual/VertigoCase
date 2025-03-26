@@ -1,5 +1,6 @@
 using PoolingSystem;
 using TMPro;
+using UISystem.RouletteGame.Data;
 using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UI;

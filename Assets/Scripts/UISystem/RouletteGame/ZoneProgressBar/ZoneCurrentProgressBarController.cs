@@ -19,7 +19,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
 
             CreateItem(currentIndex);
 
-            _scrollAnimation.ScrollToObject(1, 1f, () =>
+            _scrollAnimation.ScrollToObject(1, () =>
             {
                 _poolManager.ReleaseObject(_zoneItems[0]);
                 _zoneItems.RemoveAt(0);
