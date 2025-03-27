@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1be32cae3f245458515d69e0e9e6a61, type: 3}
+  m_Name: Consumable_Regenerator_2
+  m_EditorClassIdentifier: 
+  <RewardName>k__BackingField: Regenerator
+  _iconName: ui_icon_render_cons_healthshot_2_regenerator
+  _atlas: {fileID: 100100200, guid: 18242c7fdf69dfb46ab7c539fc7a49f3, type: 3}
+  _rewardClaimStrategyBase: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
+  <ItemID>k__BackingField: regenerator
+  <Amount>k__BackingField: 2

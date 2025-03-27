@@ -13,8 +13,19 @@ MonoBehaviour:
   m_Name: ZoneData 9
   m_EditorClassIdentifier: 
   <ZoneType>k__BackingField: 0
-  <Atlas>k__BackingField: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
-  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_white
+  <ZoneName>k__BackingField: 
   <ZoneTitle>k__BackingField: SPIN TO WIN!
   <ZoneDescription>k__BackingField: 
-  <RewardDatas>k__BackingField: []
+  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_white
+  <ZoneRouletteSpriteName>k__BackingField: ui_spin_bronze_base
+  <ZoneRouletteIndicatorSpriteName>k__BackingField: ui_spin_bronze_indicator
+  <Atlas>k__BackingField: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
+  <Rewards>k__BackingField:
+  - {fileID: 11400000, guid: a7bc2d6b46a04a6418d0d797cbacaad2, type: 2}
+  - {fileID: 11400000, guid: e6e6b950f632b7743bce3d3b840fceda, type: 2}
+  - {fileID: 11400000, guid: 1c9cb53dd2739e24394cf37d06da019b, type: 2}
+  - {fileID: 11400000, guid: b828eb09643758f4a9a03f46a7b8b21a, type: 2}
+  - {fileID: 11400000, guid: a7bc2d6b46a04a6418d0d797cbacaad2, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: 23394da06a7e99f4697e222691c7cabf, type: 2}
+  - {fileID: 11400000, guid: 8670dd1332aecf34e8b2aa73ea64fd0e, type: 2}

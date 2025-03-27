@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ZoneType>k__BackingField: 2
   <ZoneName>k__BackingField: Super Zone
-  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_super
   <ZoneTitle>k__BackingField: GOLDEN SPIN!
-  <ZoneDescription>k__BackingField: 
+  <ZoneDescription>k__BackingField: Golden Spin Description
+  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_super
+  <ZoneRouletteSpriteName>k__BackingField: ui_spin_golden_base
+  <ZoneRouletteIndicatorSpriteName>k__BackingField: ui_spin_golden_indicator
   <Atlas>k__BackingField: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
-  <RewardDatas>k__BackingField: []
+  <Rewards>k__BackingField:
+  - {fileID: 11400000, guid: cf597a192cc69ad468dd143b4b1c01bd, type: 2}
+  - {fileID: 11400000, guid: e85a3d644c3305545ac8ccc6cad7ac68, type: 2}
+  - {fileID: 11400000, guid: 1c9cb53dd2739e24394cf37d06da019b, type: 2}
+  - {fileID: 11400000, guid: a7bc2d6b46a04a6418d0d797cbacaad2, type: 2}
+  - {fileID: 11400000, guid: 59a686840588c2f4596729b5c11c8f13, type: 2}
+  - {fileID: 11400000, guid: 09ba29c9328cc24458a681ade1d62ded, type: 2}
+  - {fileID: 11400000, guid: 1c9cb53dd2739e24394cf37d06da019b, type: 2}
+  - {fileID: 11400000, guid: cf597a192cc69ad468dd143b4b1c01bd, type: 2}

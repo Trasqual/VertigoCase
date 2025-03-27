@@ -4,15 +4,16 @@ using RewardSystem;
 using ServiceLocatorSystem;
 using UISystem.RouletteGame.Data;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UISystem.RouletteGame.RewardBar
 {
     public class TemporaryRewardBarController : RouletteGameElementBase
     {
-        [SerializeField] private TemporaryRewardVisual _temporaryRewardVisualPrefab;
+        [FormerlySerializedAs("_temporaryRewardVisualPrefab")][SerializeField] private RewardVisual _rewardVisualPrefab;
         [SerializeField] private Transform _content;
 
-        private List<TemporaryRewardVisual> _rewards = new();
+        private List<RewardVisual> _rewards = new();
 
         private ObjectPoolManager _objectPoolManager;
 
@@ -27,9 +28,9 @@ namespace UISystem.RouletteGame.RewardBar
 
         public void AddReward(RewardBase reward)
         {
-            TemporaryRewardVisual temporaryRewardVisual = _objectPoolManager.GetObject(_temporaryRewardVisualPrefab, parent: _content);
-            temporaryRewardVisual.Initialize(reward);
-            _rewards.Add(temporaryRewardVisual);
+            RewardVisual rewardVisual = _objectPoolManager.GetObject(_rewardVisualPrefab, parent: _content);
+            rewardVisual.Initialize(reward);
+            _rewards.Add(rewardVisual);
         }
     }
 }
