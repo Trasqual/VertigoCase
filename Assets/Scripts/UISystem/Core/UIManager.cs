@@ -10,7 +10,7 @@ namespace UISystem.Core
     {
         private PanelContainer _panelContainer;
         
-        private List<UIPanel> _activePanels;
+        private List<UIPanelBase> _activePanels;
         
         private ObjectPoolManager _poolManager;
 
@@ -23,12 +23,12 @@ namespace UISystem.Core
         {
             _poolManager = ServiceLocator.Instance.Get<ObjectPoolManager>();
             
-            _activePanels = new List<UIPanel>();
+            _activePanels = new List<UIPanelBase>();
             
             _panelContainer = Resources.Load<PanelContainer>("PanelContainer");
         }
         
-        public T GetPanel<T>(string panelID) where T : UIPanel
+        public T GetPanel<T>(string panelID) where T : UIPanelBase
         {
             return (T)_panelContainer.Panels.FirstOrDefault(p => p.GetPanelID() == panelID);
         }

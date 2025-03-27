@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UISystem.Core
 {
-    public abstract class UIPanel : MonoBehaviour, IPoolable
+    public abstract class UIPanelBase : MonoBehaviour, IPoolable
     {
         [field: SerializeField] public string PoolID { get; private set; }
 
