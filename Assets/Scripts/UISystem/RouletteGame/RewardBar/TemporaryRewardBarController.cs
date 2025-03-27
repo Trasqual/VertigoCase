@@ -12,7 +12,7 @@ namespace UISystem.RouletteGame.RewardBar
         [SerializeField] private TemporaryRewardVisual _temporaryRewardVisualPrefab;
         [SerializeField] private Transform _content;
 
-        private List<TemporaryRewardVisual> _rewards;
+        private List<TemporaryRewardVisual> _rewards = new();
 
         private ObjectPoolManager _objectPoolManager;
 
