@@ -54,16 +54,11 @@ namespace UISystem.Animations
             float stoppedAngle = transform.eulerAngles.z;
             float closestStopAngle = GetClosestStopAngle(stoppedAngle);
 
-            yield return SnapToAngle(closestStopAngle);
+            yield return transform.DORotate(new Vector3(0f, 0f, closestStopAngle), _snapSpeed).SetSpeedBased().WaitForCompletion();
 
             _isSpinning = false;
 
             onComplete?.Invoke();
-        }
-
-        private Tween SnapToAngle(float targetAngle)
-        {
-            return transform.DORotate(new Vector3(0f, 0f, targetAngle), _snapSpeed).SetSpeedBased();
         }
 
         private float GetClosestStopAngle(float angle)

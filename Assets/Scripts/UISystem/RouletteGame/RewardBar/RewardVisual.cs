@@ -16,8 +16,13 @@ namespace UISystem.RouletteGame.RewardBar
 
         public void Initialize(RewardBase reward)
         {
-            ValueText.text = reward.GetValueText();
+            ValueText.SetText(reward.GetValueText());
             RewardIcon.sprite = reward.Icon;
+        }
+
+        public void SetValueText(string value)
+        {
+            ValueText.SetText(value);
         }
         
         public void OnSpawn()

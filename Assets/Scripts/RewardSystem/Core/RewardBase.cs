@@ -13,15 +13,22 @@ namespace RewardSystem
 
         [SerializeField] private SpriteAtlas _atlas;
 
-        [FormerlySerializedAs("_rewardClaimStrategy")][SerializeField] private RewardClaimStrategyBase _rewardClaimStrategyBase;
+        [SerializeField] private RewardClaimStrategyBase _rewardTemporaryClaimStrategy;
+
+        [SerializeField] private RewardClaimStrategyBase _rewardPermanentClaimStrategy;
 
         public Sprite Icon => _atlas.GetSprite(_iconName);
 
         public abstract string GetValueText();
 
-        public virtual void Claim()
+        public virtual void ClaimTemporary()
         {
-            _rewardClaimStrategyBase.Execute(this);
+            _rewardTemporaryClaimStrategy.Execute(this);
+        }
+
+        public virtual void ClaimPermanent()
+        {
+            _rewardPermanentClaimStrategy.Execute(this);
         }
     }
 }

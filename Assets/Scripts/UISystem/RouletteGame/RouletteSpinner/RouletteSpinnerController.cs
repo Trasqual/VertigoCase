@@ -76,7 +76,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
         {
             int rewardIndex = _spinAnimation.GetClosestStopIndex();
 
-            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].Claim();
+            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].ClaimTemporary();
         }
 
         private void SetupVisuals()

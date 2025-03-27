@@ -15,4 +15,5 @@ MonoBehaviour:
   <RewardName>k__BackingField: Silver Chest
   _iconName: ui_icon_chest_silver_nolight
   _atlas: {fileID: 100100200, guid: 18242c7fdf69dfb46ab7c539fc7a49f3, type: 3}
-  _rewardClaimStrategyBase: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
+  _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}
+  _rewardPermanentClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}

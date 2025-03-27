@@ -1,3 +1,4 @@
+using EventSystem;
 using PoolingSystem;
 using RewardSystem;
 using ServiceLocatorSystem;
@@ -11,6 +12,7 @@ namespace Installer
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void Install()
         {
+            ServiceLocator.Instance.RegisterService(new EventManager());
             ServiceLocator.Instance.RegisterService(new ObjectPoolManager());
             ServiceLocator.Instance.RegisterService(new UIManager());
             ServiceLocator.Instance.RegisterService(new RewardManager());
