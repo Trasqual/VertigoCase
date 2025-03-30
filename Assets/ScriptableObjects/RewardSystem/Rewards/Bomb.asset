@@ -15,5 +15,5 @@ MonoBehaviour:
   <RewardName>k__BackingField: Bomb
   _iconName: ui_card_icon_death
   _atlas: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
-  _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
+  _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: b7cf8d7d3d0260843a448247484995a2, type: 2}
   _rewardPermanentClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}

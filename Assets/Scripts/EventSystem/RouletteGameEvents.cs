@@ -1,9 +1,6 @@
-public struct RouletteGameProgressedEvent
+namespace EventSystem
 {
-    public int CurrentZoneNo;
-    
-    public RouletteGameProgressedEvent(int currentZoneNo)
+    public struct BombClaimedEvent
     {
-        CurrentZoneNo = currentZoneNo;
     }
 }

@@ -69,7 +69,7 @@ namespace UISystem.RouletteGame.RewardBar
 
         private void OnDisable()
         {
-            _eventManager.RemoveListener<TemporaryRewardCollectedEvent>(OnRewardCollected);
+            _eventManager?.RemoveListener<TemporaryRewardCollectedEvent>(OnRewardCollected);
         }
     }
 }

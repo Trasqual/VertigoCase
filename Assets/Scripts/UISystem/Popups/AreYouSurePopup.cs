@@ -47,9 +47,6 @@ namespace UISystem.Popups
         public override void Hide()
         {
             ResetSelf();
-
-            UIManager uiManager = ServiceLocator.Instance.Get<UIManager>();
-            uiManager.ClosePanel(GetPanelID());
         }
 
         private void ResetSelf()

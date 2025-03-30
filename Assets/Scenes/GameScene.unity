@@ -1560,11 +1560,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47efb04863b93cc4c8acc36b61024e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _exitButton: {fileID: 1425792781}
+  <ExitButton>k__BackingField: {fileID: 1425792781}
+  <SpinButton>k__BackingField: {fileID: 603340454}
   _zoneDatas:
   - {fileID: 11400000, guid: e37eb3bc5600bc0488401df94b98a3ae, type: 2}
   - {fileID: 11400000, guid: 305e70f0ffa6a0748a3bc87415e9158e, type: 2}
-  - {fileID: 11400000, guid: cf14aa1af7586f44dba1c3abb8047110, type: 2}
+  - {fileID: 11400000, guid: bce8d6fdf7b442f4bb6a929559f83d43, type: 2}
   - {fileID: 11400000, guid: 3213af797b2f6b544be0d9e3301045b4, type: 2}
   - {fileID: 11400000, guid: 2a91a54867807de42af51aa8a88acae2, type: 2}
   - {fileID: 11400000, guid: a9bbe70fed0f7164b9e73114fe651ce6, type: 2}
@@ -1577,7 +1578,10 @@ MonoBehaviour:
   - {fileID: 586877338}
   - {fileID: 1665723827}
   - {fileID: 1463105769}
+  _spinnerController: {fileID: 1463105769}
   _temporaryRewardBarController: {fileID: 2140716373}
+  _atlas: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
+  _bombSpriteName: ui_card_icon_death
 --- !u!1 &1328038504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,7 +1849,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425792778}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1854,10 +1858,10 @@ RectTransform:
   m_Father: {fileID: 74285811}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.079526424, y: 0.86354554}
+  m_AnchorMin: {x: 0.07952627, y: 0.86354554}
   m_AnchorMax: {x: 0.9204736, y: 0.9581993}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -0.0000047683716}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425792780
 MonoBehaviour:
@@ -2087,7 +2091,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rewardVisualPrefab: {fileID: 6477144759612605151, guid: be30fe62bc70fda4e9d2d26fe521631f, type: 3}
-  _spinButton: {fileID: 603340454}
   _rouletteImage: {fileID: 1898041323}
   _rouletteIndicatorImage: {fileID: 2016264353}
   _zoneTitleText: {fileID: 1978076068}
@@ -2433,7 +2436,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

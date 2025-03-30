@@ -1,5 +1,5 @@
 using System;
-using ServiceLocatorSystem;
+using DG.Tweening;
 using TMPro;
 using UISystem.Core;
 using UnityEngine;
@@ -19,25 +19,30 @@ namespace UISystem.Popups
         [SerializeField] private TMP_Text _countdownText;
 
         [SerializeField] private Image _iconImage;
-
-        private UIManager _uiManager;
-
+        
         private CountdownTimer _countdownTimer;
 
         private Action _onRevive;
         private Action _onCancel;
 
-        public override string GetPanelID() => UIIDs.AreYouSurePopup;
+        public override string GetPanelID() => UIIDs.RevivePopup;
 
         private void Update()
         {
-            if (!_countdownTimer.IsRunning)
+            int newTime = Mathf.CeilToInt(_countdownTimer.Time);
+            if (_countdownText.text != newTime.ToString())
             {
-                return;
+                _countdownText.SetText(newTime.ToString());
+                CountdownAnimation();
             }
-
+    
             _countdownTimer.Tick(Time.deltaTime);
-            _countdownText.SetText(Mathf.CeilToInt(_countdownTimer.Progress).ToString());
+        }
+        
+        private void CountdownAnimation()
+        {
+            _countdownText.transform.localScale = Vector3.one;
+            _countdownText.transform.DOPunchScale(Vector3.one * 0.2f, 0.3f, 8, 0.5f);
         }
 
         public override void ApplyData(object data)
@@ -47,8 +52,6 @@ namespace UISystem.Popups
                 Debug.Log($"Wrong data {data.GetType()} sent for UI {GetPanelID()}");
                 return;
             }
-
-            _uiManager = ServiceLocator.Instance.Get<UIManager>();
 
             _reviveButtonText.SetText(revivePopupData.ReviveButtonText);
             _cancelButtonText.SetText(revivePopupData.CancelButtonText);
@@ -82,8 +85,6 @@ namespace UISystem.Popups
         public override void Hide()
         {
             ResetSelf();
-
-            _uiManager.ClosePanel(GetPanelID());
         }
 
         private void ResetSelf()

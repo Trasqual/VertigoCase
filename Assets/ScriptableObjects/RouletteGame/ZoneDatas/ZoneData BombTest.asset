@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d50012dad5a564eb04040f4dc4b72c, type: 3}
+  m_Name: ZoneData BombTest
+  m_EditorClassIdentifier: 
+  <ZoneType>k__BackingField: 0
+  <ZoneName>k__BackingField: Death Zone
+  <ZoneTitle>k__BackingField: You will die!
+  <ZoneDescription>k__BackingField: Death comes for you!
+  <ZoneBackgroundSpriteName>k__BackingField: ui_card_panel_zone_current
+  <ZoneRouletteSpriteName>k__BackingField: ui_spin_golden_base
+  <ZoneRouletteIndicatorSpriteName>k__BackingField: ui_spin_silver_indicator
+  <Atlas>k__BackingField: {fileID: 100100200, guid: 0cb291718a401f34ba8c720cfe019e07, type: 3}
+  <Rewards>k__BackingField:
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}
+  - {fileID: 11400000, guid: c5a3f4a67d424d64199ca406af09eb6a, type: 2}

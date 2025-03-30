@@ -13,9 +13,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
     public class RouletteSpinnerController : RouletteGameElementBase
     {
         [SerializeField] private RewardVisual _rewardVisualPrefab;
-
-        [SerializeField] private Button _spinButton;
-
+        
         [SerializeField] private Image _rouletteImage;
         [SerializeField] private Image _rouletteIndicatorImage;
 
@@ -49,14 +47,12 @@ namespace UISystem.RouletteGame.RouletteSpinner
             SetupAnimation();
 
             SetupVisuals();
-            
-            _spinButton.onClick.AddListener(OnSpinButtonClicked);
         }
 
         private void GenerateRewardVisuals()
         {
             _rewardVisuals = new RewardVisual[_zoneDatas[0].Rewards.Count];
-            
+
             for (int i = 0; i < _zoneDatas[0].Rewards.Count; i++)
             {
                 RewardVisual visual = _poolManager.GetObject(_rewardVisualPrefab, parent: _spinAnimation.transform);
@@ -65,11 +61,9 @@ namespace UISystem.RouletteGame.RouletteSpinner
         }
 
 
-        private void OnSpinButtonClicked()
+        public void Spin()
         {
             _spinAnimation.Play(OnSpinComplete);
-
-            //TODO : OnSpinStarted event
         }
 
         private void OnSpinComplete()
