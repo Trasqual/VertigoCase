@@ -8,13 +8,10 @@ namespace UISystem.Animations
 {
     public class WheelOfFortuneAnimation : MonoBehaviour
     {
-        [SerializeField] private int _stopCount = 8;
-        [SerializeField] private float _spinDuration = 2f;
-        [SerializeField] private float _minSpinSpeed = 90f;
-        [SerializeField] private float _maxSpinSpeed = 1440f;
-        [SerializeField] private float _snapSpeed = 50f;
-        [SerializeField] private bool _clockwise = true;
+        [SerializeField] private WheelOfFortuneAnimationSettings _settings;
 
+        [SerializeField] private int _stopCount = 8;
+        
         private bool _isSpinning;
 
         public void SetStopCount(int stopCount)
@@ -38,15 +35,15 @@ namespace UISystem.Animations
 
             float elapsedTime = 0f;
             const float maxSpeedRandomnessRange = 0.8f;
-            float speed = Random.Range(_maxSpinSpeed * maxSpeedRandomnessRange, _maxSpinSpeed);
+            float speed = Random.Range(_settings.MaxSpinSpeed * maxSpeedRandomnessRange, _settings.MaxSpinSpeed);
 
-            while (elapsedTime < _spinDuration)
+            while (elapsedTime < _settings.SpinDuration)
             {
-                float angleIncrement = speed * Time.deltaTime * (_clockwise ? -1 : 1);
+                float angleIncrement = speed * Time.deltaTime * (_settings.Clockwise ? -1 : 1);
                 transform.Rotate(Vector3.forward, angleIncrement);
 
                 const float deceleration = 0.98f;
-                speed = Mathf.Max(_minSpinSpeed, speed * deceleration);
+                speed = Mathf.Max(_settings.MinSpinSpeed, speed * deceleration);
 
                 elapsedTime += Time.deltaTime;
                 yield return null;
@@ -55,7 +52,7 @@ namespace UISystem.Animations
             float stoppedAngle = transform.eulerAngles.z;
             float closestStopAngle = GetClosestStopAngle(stoppedAngle);
 
-            yield return transform.DORotate(new Vector3(0f, 0f, closestStopAngle), _snapSpeed).SetSpeedBased().WaitForCompletion();
+            yield return transform.DORotate(new Vector3(0f, 0f, closestStopAngle), _settings.SnapSpeed).SetSpeedBased().WaitForCompletion();
 
             _isSpinning = false;
 

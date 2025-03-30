@@ -2647,11 +2647,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7173ba2dc9044f4e9bd35dc1415c3b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _settings: {fileID: 11400000, guid: 5f1f83a27a1fbff4a8073fff83928701, type: 2}
   _stopCount: 8
-  _spinDuration: 2
-  _minSpinSpeed: 90
-  _maxSpinSpeed: 1440
-  _snapSpeed: 50
 --- !u!1 &1978076065
 GameObject:
   m_ObjectHideFlags: 0
