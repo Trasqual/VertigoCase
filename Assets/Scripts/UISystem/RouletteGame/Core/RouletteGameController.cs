@@ -93,16 +93,18 @@ namespace UISystem.RouletteGame.Core
 
         private void OnCollectionAnimationFinished(object obj)
         {
-            OnProgress();
+            ProgressToNextZone();
         }
 
-        private void OnProgress()
+        private void ProgressToNextZone()
         {
             _currentZoneIndex++;
 
             if (_currentZoneIndex >= _zoneDatas.Count)
             {
                 _temporaryRewardBarController.ClaimRewardsPermanently();
+                _stateMachine.ChangeState(_inactiveState);
+
                 //TODO : Exit roulette game
                 return;
             }
@@ -145,6 +147,7 @@ namespace UISystem.RouletteGame.Core
                                                   {
                                                       Debug.Log("Spent some coins to revive.");
                                                       _uiManager.ClosePanel(UIIDs.RevivePopup);
+                                                      ProgressToNextZone();
                                                       _stateMachine.ChangeState(_idleState);
                                                   },
                                                   onCancel: () =>

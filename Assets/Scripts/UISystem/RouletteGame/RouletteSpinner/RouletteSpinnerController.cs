@@ -13,7 +13,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
     public class RouletteSpinnerController : RouletteGameElementBase
     {
         [SerializeField] private RewardVisual _rewardVisualPrefab;
-        
+
         [SerializeField] private Image _rouletteImage;
         [SerializeField] private Image _rouletteIndicatorImage;
 
@@ -70,7 +70,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
         {
             int rewardIndex = _spinAnimation.GetClosestStopIndex();
 
-            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].ClaimTemporary();
+            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].ClaimTemporary(_rewardVisuals[rewardIndex].transform.position);
         }
 
         private void SetupVisuals()

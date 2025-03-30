@@ -1,4 +1,5 @@
 using RewardSystem;
+using UnityEngine;
 
 namespace EventSystem
 {
@@ -6,14 +7,16 @@ namespace EventSystem
     {
         public RewardBase Reward;
 
-        public TemporaryRewardCollectedEvent(RewardBase reward)
+        public Vector3 Position;
+
+        public TemporaryRewardCollectedEvent(RewardBase reward, Vector3 position)
         {
             Reward = reward;
+            Position = position;
         }
     }
-    
+
     public struct CollectionAnimationFinishedEvent
     {
-    
     }
 }

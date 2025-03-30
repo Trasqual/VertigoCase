@@ -15,3 +15,4 @@ MonoBehaviour:
   Panels:
   - {fileID: 7995316118849614576, guid: 12db44c4a5f10aa498d02bce38f68e2a, type: 3}
   - {fileID: 588654772036324707, guid: 9a3e14d135818734882d4b406a42b6ca, type: 3}
+  - {fileID: 8895527910336158671, guid: 3cc14258dc5ac1742994ed1f1ce68f98, type: 3}

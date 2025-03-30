@@ -21,14 +21,14 @@ namespace RewardSystem
 
         public abstract string GetValueText();
 
-        public virtual void ClaimTemporary()
+        public virtual void ClaimTemporary(Vector3 position)
         {
-            _rewardTemporaryClaimStrategy.Execute(this);
+            _rewardTemporaryClaimStrategy.Execute(this, position);
         }
 
-        public virtual void ClaimPermanent()
+        public virtual void ClaimPermanent(Vector3 position)
         {
-            _rewardPermanentClaimStrategy.Execute(this);
+            _rewardPermanentClaimStrategy.Execute(this, position);
         }
     }
 }

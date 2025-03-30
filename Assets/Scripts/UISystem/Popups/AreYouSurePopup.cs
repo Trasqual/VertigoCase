@@ -75,7 +75,7 @@ namespace UISystem.Popups
 
     public partial class UIIDs
     {
-        public static string AreYouSurePopup = "AreYouSurePopup";
+        public const string AreYouSurePopup = "AreYouSurePopup";
     }
 
     public struct AreYouSurePopupData

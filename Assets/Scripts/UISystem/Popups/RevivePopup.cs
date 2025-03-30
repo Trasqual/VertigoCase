@@ -131,7 +131,7 @@ namespace UISystem.Popups
 
     public partial class UIIDs
     {
-        public static string RevivePopup = "RevivePopup";
+        public const string RevivePopup = "RevivePopup";
     }
 
     public struct RevivePopupData
