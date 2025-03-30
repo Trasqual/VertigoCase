@@ -13,9 +13,12 @@ namespace UISystem.RouletteGame.RewardBar
         
         [field: SerializeField] public string PoolID { get; private set; }
         public Component Component => this;
+        
+        public RewardBase Reward { get; private set; }
 
         public void Initialize(RewardBase reward)
         {
+            Reward = reward;
             ValueText.SetText(reward.GetValueText());
             RewardIcon.sprite = reward.Icon;
         }

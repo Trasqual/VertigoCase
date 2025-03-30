@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02a3346bc6934ea9a4d049cdce73d3e7, type: 3}
   m_Name: PanelContainer
   m_EditorClassIdentifier: 
-  Panels: []
+  Panels:
+  - {fileID: 7995316118849614576, guid: 12db44c4a5f10aa498d02bce38f68e2a, type: 3}
+  - {fileID: 588654772036324707, guid: 9a3e14d135818734882d4b406a42b6ca, type: 3}

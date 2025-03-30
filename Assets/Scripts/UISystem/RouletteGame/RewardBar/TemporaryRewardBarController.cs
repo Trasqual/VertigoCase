@@ -43,8 +43,28 @@ namespace UISystem.RouletteGame.RewardBar
         {
             RewardVisual rewardVisual = _objectPoolManager.GetObject(_rewardVisualPrefab, parent: _content);
             rewardVisual.Initialize(reward);
-            //rewardVisual.SetValueText("0");
+            rewardVisual.SetValueText("");
             _rewards.Add(rewardVisual);
+        }
+
+        public void ClaimRewardsPermanently()
+        {
+            foreach (RewardVisual rewardVisual in _rewards)
+            {
+                rewardVisual.Reward.ClaimPermanent();
+            }
+            
+            _rewards.Clear();
+        }
+        
+        public void ClearRewards()
+        {
+            foreach (RewardVisual rewardVisual in _rewards)
+            {
+                _objectPoolManager.ReleaseObject(rewardVisual);
+            }
+            
+            _rewards.Clear();
         }
 
         private void OnDisable()
