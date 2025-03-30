@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon_Sniper_Tier3
   m_EditorClassIdentifier: 
   <RewardName>k__BackingField: Sniper T3
-  _iconName: ui_icon_renders_tier3_sniper
+  _iconName: UI_Icon_Renders_tier3_sniper
   _atlas: {fileID: 100100200, guid: febddc53e7dc08c4b8e9144b9049eace, type: 3}
   _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}
   _rewardPermanentClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
