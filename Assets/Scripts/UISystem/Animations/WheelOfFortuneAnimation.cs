@@ -13,9 +13,10 @@ namespace UISystem.Animations
         [SerializeField] private float _minSpinSpeed = 90f;
         [SerializeField] private float _maxSpinSpeed = 1440f;
         [SerializeField] private float _snapSpeed = 50f;
+        [SerializeField] private bool _clockwise = true;
 
         private bool _isSpinning;
-        
+
         public void SetStopCount(int stopCount)
         {
             _stopCount = stopCount;
@@ -41,7 +42,7 @@ namespace UISystem.Animations
 
             while (elapsedTime < _spinDuration)
             {
-                float angleIncrement = speed * Time.deltaTime;
+                float angleIncrement = speed * Time.deltaTime * (_clockwise ? -1 : 1);
                 transform.Rotate(Vector3.forward, angleIncrement);
 
                 const float deceleration = 0.98f;
