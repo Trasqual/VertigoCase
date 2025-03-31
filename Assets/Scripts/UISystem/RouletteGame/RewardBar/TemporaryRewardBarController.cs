@@ -87,6 +87,7 @@ namespace UISystem.RouletteGame.RewardBar
 
             RewardVisual rewardVisual = _objectPoolManager.GetObject(_rewardVisualPrefab, parent: _content);
             rewardVisual.Initialize(reward);
+            rewardVisual.transform.localScale = Vector3.one;
             rewardVisual.SetValueText("");
             _rewardVisuals.Add(rewardVisual);
 

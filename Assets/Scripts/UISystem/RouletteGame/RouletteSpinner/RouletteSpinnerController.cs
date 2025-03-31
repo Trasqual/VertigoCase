@@ -65,6 +65,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
             for (int i = 0; i < _zoneDatas[0].Rewards.Count; i++)
             {
                 RewardVisual visual = _poolManager.GetObject(_rewardVisualPrefab, parent: _spinAnimation.transform);
+                visual.transform.localScale = Vector3.one;
                 _rewardVisuals[i] = visual;
             }
         }
@@ -124,10 +125,14 @@ namespace UISystem.RouletteGame.RouletteSpinner
 
         public override void Clear()
         {
+            _currentZoneIndex = 0;
+
             foreach (RewardVisual visual in _rewardVisuals)
             {
                 _poolManager.ReleaseObject(visual);
             }
+
+            _rewardVisuals = null;
         }
     }
 }

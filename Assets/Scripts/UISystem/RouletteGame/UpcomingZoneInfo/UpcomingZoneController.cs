@@ -38,6 +38,7 @@ namespace UISystem.RouletteGame.UpcomingZoneInfo
                 {
                     UpcomingZoneInfoItem upcomingZoneInfoItem = _poolManager.GetObject(_upcomingZoneInfoItemPrefab, parent: transform);
                     upcomingZoneInfoItem.Initialize(_zoneDatas[i], i + 1);
+                    upcomingZoneInfoItem.transform.localScale = Vector3.one;
                     _upcomingZoneItems.Add(upcomingZoneInfoItem);
 
                     foundCount++;
