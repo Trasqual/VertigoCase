@@ -37,12 +37,13 @@ namespace Utilities.UI
                     break;
             }
         }
-
+#if UNITY_EDITOR
         protected override void OnValidate()
         {
             base.OnValidate();
 
             AdjustPadding();
         }
+#endif
     }
 }

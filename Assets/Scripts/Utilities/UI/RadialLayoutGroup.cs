@@ -69,10 +69,11 @@ namespace Utilities.UI
                 angle += angleOffset;
             }
         }
-
+#if UNITY_EDITOR
         protected override void OnValidate()
         {
             ArrangeChildren();
         }
+#endif
     }
 }
