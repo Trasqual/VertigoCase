@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using PoolingSystem;
 using ServiceLocatorSystem;
 using TMPro;
@@ -19,6 +21,8 @@ namespace UISystem.RouletteGame.RouletteSpinner
 
         [SerializeField] private TMP_Text _zoneTitleText;
         [SerializeField] private TMP_Text _zoneDescriptionText;
+
+        [SerializeField] private WheelOfFortuneSpawnPunchAnimationSettings _punchAnimationSettings;
 
         private List<ZoneData> _zoneDatas = new();
 
@@ -47,9 +51,11 @@ namespace UISystem.RouletteGame.RouletteSpinner
             SetupVisuals();
         }
 
-        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings)
+        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings,
+                                  WheelOfFortuneSpawnPunchAnimationSettings wheelOfFortuneSpawnPunchAnimationSettings)
         {
             _spinAnimation.ApplySettings(wheelOfFortuneAnimationSettings);
+            _punchAnimationSettings = wheelOfFortuneSpawnPunchAnimationSettings;
         }
 
         private void GenerateRewardVisuals()
@@ -77,6 +83,8 @@ namespace UISystem.RouletteGame.RouletteSpinner
 
         private void SetupVisuals()
         {
+            _rouletteImage.transform.localRotation = Quaternion.identity;
+
             _rouletteImage.sprite = _zoneDatas[_currentZoneIndex].GetRouletteSprite();
             _rouletteIndicatorImage.sprite = _zoneDatas[_currentZoneIndex].GetRouletteIndicatorSprite();
 
@@ -95,11 +103,23 @@ namespace UISystem.RouletteGame.RouletteSpinner
             _spinAnimation.SetStopCount(_zoneDatas[0].Rewards.Count);
         }
 
-        public override void OnProgress(int currentIndex)
+        public override async UniTask OnProgress(int currentIndex)
         {
             _currentZoneIndex = currentIndex;
             SetupAnimation();
             SetupVisuals();
+
+            await AnimateNewRewards();
+        }
+
+        private async UniTask AnimateNewRewards()
+        {
+            foreach (RewardVisual visual in _rewardVisuals)
+            {
+                _ = visual.transform.DOPunchScale(_punchAnimationSettings.Punch, _punchAnimationSettings.Duration, _punchAnimationSettings.Vibrato,
+                                                  _punchAnimationSettings.Elasticity);
+                await UniTask.Delay(_punchAnimationSettings.DelayBetweenRewards);
+            }
         }
 
         public override void Clear()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using PoolingSystem;
 using ServiceLocatorSystem;
 using UISystem.RouletteGame.Data;
@@ -40,7 +41,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             _zoneItems.Add(zoneItem);
         }
 
-        public abstract override void OnProgress(int currentIndex);
+        public abstract override UniTask OnProgress(int currentIndex);
 
         public override void Clear()
         {

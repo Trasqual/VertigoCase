@@ -1834,6 +1834,7 @@ MonoBehaviour:
   _temporaryRewardBarController: {fileID: 2140716373}
   _scrollAnimationSettings: {fileID: 11400000, guid: 6618a2d73a645cd41a5a2b9adb570063, type: 2}
   _wheelOfFortuneAnimationSettings: {fileID: 11400000, guid: 5f1f83a27a1fbff4a8073fff83928701, type: 2}
+  _wheelOfFortunePunchAnimationSettings: {fileID: 11400000, guid: da5deeabec62cbb4d874f969d679e290, type: 2}
   _collectionAnimationSettings: {fileID: 11400000, guid: 32a653f6674825d4e810abde1a2dea29, type: 2}
   _zoneDatas:
   - {fileID: 11400000, guid: e37eb3bc5600bc0488401df94b98a3ae, type: 2}
@@ -2361,6 +2362,7 @@ MonoBehaviour:
   _rouletteIndicatorImage: {fileID: 2016264353}
   _zoneTitleText: {fileID: 1978076068}
   _zoneDescriptionText: {fileID: 2047184594}
+  _punchAnimationSettings: {fileID: 11400000, guid: da5deeabec62cbb4d874f969d679e290, type: 2}
 --- !u!1 &1517021487
 GameObject:
   m_ObjectHideFlags: 0

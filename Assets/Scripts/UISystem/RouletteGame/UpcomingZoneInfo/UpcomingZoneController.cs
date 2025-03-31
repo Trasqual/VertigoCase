@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using PoolingSystem;
 using ServiceLocatorSystem;
 using UISystem.RouletteGame.Data;
@@ -22,15 +23,15 @@ namespace UISystem.RouletteGame.UpcomingZoneInfo
             _zoneDatas = zoneDatas;
 
             _poolManager = ServiceLocator.Instance.Get<ObjectPoolManager>();
-            
-            OnProgress(0);
+
+            OnProgress(0).Forget();
         }
 
-        public override void OnProgress(int currentIndex)
+        public override async UniTask OnProgress(int currentIndex)
         {
             Clear();
             int foundCount = 0;
-    
+
             for (int i = currentIndex + 1; i < _zoneDatas.Count; i++)
             {
                 if (_zoneDatas[i].ZoneType is ZoneType.Safe or ZoneType.Super)
@@ -38,11 +39,13 @@ namespace UISystem.RouletteGame.UpcomingZoneInfo
                     UpcomingZoneInfoItem upcomingZoneInfoItem = _poolManager.GetObject(_upcomingZoneInfoItemPrefab, parent: transform);
                     upcomingZoneInfoItem.Initialize(_zoneDatas[i], i + 1);
                     _upcomingZoneItems.Add(upcomingZoneInfoItem);
-            
+
                     foundCount++;
                     if (foundCount == 2) break;
                 }
             }
+
+            await UniTask.CompletedTask;
         }
 
         public override void Clear()

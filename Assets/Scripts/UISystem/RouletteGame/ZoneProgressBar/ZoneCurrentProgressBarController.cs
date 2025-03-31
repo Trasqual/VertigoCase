@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +11,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             CreateItem(0);
         }
 
-        public override void OnProgress(int currentIndex)
+        public override async UniTask OnProgress(int currentIndex)
         {
             if (currentIndex >= _zoneDatas.Count)
             {
@@ -19,7 +20,7 @@ namespace UISystem.RouletteGame.ZoneProgressBar
 
             CreateItem(currentIndex);
 
-            _scrollAnimation.ScrollToObject(1, () =>
+            await _scrollAnimation.ScrollToObject(1, () =>
             {
                 _poolManager.ReleaseObject(_zoneItems[0]);
                 _zoneItems.RemoveAt(0);

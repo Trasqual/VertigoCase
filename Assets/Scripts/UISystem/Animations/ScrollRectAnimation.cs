@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UISystem.RouletteGame.Data;
 using UnityEngine;
@@ -28,10 +29,11 @@ namespace Utilities.UI
             _scrollAnimationSettings = scrollAnimationSettings;
         }
 
-        public void ScrollToObject(int index, Action onComplete = null)
+        public async UniTask ScrollToObject(int index, Action onComplete = null)
         {
             if (index < 0 || index >= _scrollRect.content.childCount || _scrollRect.content.childCount == 0)
             {
+                onComplete?.Invoke();
                 return;
             }
 
@@ -40,6 +42,7 @@ namespace Utilities.UI
             if (_layoutGroup == null)
             {
                 Debug.Log("There is no layout group on the content object.");
+                onComplete?.Invoke();
                 return;
             }
 
@@ -55,10 +58,17 @@ namespace Utilities.UI
                     spacing = horizontalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.x, -scrollPos, _scrollAnimationSettings.Duration,
-                                    value => _content.localPosition = new Vector3(value, _content.localPosition.y, _content.localPosition.z))
-                             .SetEase(_scrollAnimationSettings.Ease)
-                             .OnComplete(() => onComplete?.Invoke());
+                    try
+                    {
+                        await DOVirtual.Float(_content.localPosition.x, -scrollPos, _scrollAnimationSettings.Duration,
+                                              value => _content.localPosition = new Vector3(value, _content.localPosition.y, _content.localPosition.z))
+                                       .SetEase(_scrollAnimationSettings.Ease);
+                    }
+                    catch
+                    {
+                        Debug.LogError("Scroll animation failed.");
+                    }
+
                     break;
 
                 case VerticalLayoutGroup verticalLayoutGroup:
@@ -66,12 +76,21 @@ namespace Utilities.UI
                     spacing = verticalLayoutGroup.spacing;
                     scrollPos = index * (childSize + spacing);
 
-                    DOVirtual.Float(_content.localPosition.y, -scrollPos, _scrollAnimationSettings.Duration,
-                                    value => _content.localPosition = new Vector3(_content.localPosition.x, value, _content.localPosition.z))
-                             .SetEase(_scrollAnimationSettings.Ease)
-                             .OnComplete(() => onComplete?.Invoke());
+                    try
+                    {
+                        await DOVirtual.Float(_content.localPosition.y, -scrollPos, _scrollAnimationSettings.Duration,
+                                              value => _content.localPosition = new Vector3(_content.localPosition.x, value, _content.localPosition.z))
+                                       .SetEase(_scrollAnimationSettings.Ease);
+                    }
+                    catch
+                    {
+                        Debug.LogError("Scroll animation failed.");
+                    }
+
                     break;
             }
+            
+            onComplete?.Invoke();
         }
     }
 }

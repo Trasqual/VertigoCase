@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+
 namespace UISystem.RouletteGame.ZoneProgressBar
 {
     public class ZoneProgressBarController : ZoneProgressBarControllerBase
@@ -10,14 +12,14 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             }
         }
 
-        public override void OnProgress(int currentIndex)
+        public override async UniTask OnProgress(int currentIndex)
         {
             if (currentIndex >= _zoneDatas.Count)
             {
                 return;
             }
 
-            _scrollAnimation.ScrollToObject(currentIndex);
+            await _scrollAnimation.ScrollToObject(currentIndex);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using EventSystem;
 using ServiceLocatorSystem;
 using StateMachineSystem;
@@ -37,6 +38,7 @@ namespace UISystem.RouletteGame.Core
         [Header("Animation Settings")]
         [SerializeField] private ScrollAnimationSettings _scrollAnimationSettings;
         [SerializeField] private WheelOfFortuneAnimationSettings _wheelOfFortuneAnimationSettings;
+        [SerializeField] private WheelOfFortuneSpawnPunchAnimationSettings _wheelOfFortunePunchAnimationSettings;
         [SerializeField] private CollectionAnimationSettings _collectionAnimationSettings;
 
         [Header("Datas")]
@@ -71,13 +73,15 @@ namespace UISystem.RouletteGame.Core
 
             InitializeElements();
 
+            ApplyAnimationSettings();
+
             ExitButton.onClick.AddListener(OnExitButtonClicked);
             SpinButton.onClick.AddListener(OnSpinStarted);
         }
 
         private void ApplyAnimationSettings()
         {
-            _spinnerController.ApplySettings(_wheelOfFortuneAnimationSettings);
+            _spinnerController.ApplySettings(_wheelOfFortuneAnimationSettings, _wheelOfFortunePunchAnimationSettings);
             _progressBarController.ApplySettings(_scrollAnimationSettings);
             _currentProgressBarController.ApplySettings(_scrollAnimationSettings);
             _temporaryRewardBarController.ApplySettings(_collectionAnimationSettings);
@@ -116,26 +120,48 @@ namespace UISystem.RouletteGame.Core
 
         private void OnCollectionAnimationFinished(object obj)
         {
-            ProgressToNextZone();
+            ProgressToNextZone().Forget();
         }
 
-        private void ProgressToNextZone()
+        private async UniTaskVoid ProgressToNextZone()
         {
             _currentZoneIndex++;
 
-            if (_currentZoneIndex >= _zoneDatas.Count)
+            if (IsGameCompleted())
             {
-                _temporaryRewardBarController.ClaimRewardsPermanently();
-                _stateMachine.ChangeState(_inactiveState);
-
-                ExitGame();
                 return;
             }
 
-            foreach (RouletteGameElementBase element in _rouletteGameElements)
+            await PlayProgressAnimations();
+
+            _stateMachine.ChangeState(_idleState);
+        }
+
+        private bool IsGameCompleted()
+        {
+            if (_currentZoneIndex < _zoneDatas.Count)
             {
-                element.OnProgress(_currentZoneIndex);
+                return false;
             }
+
+            _temporaryRewardBarController.ClaimRewardsPermanently();
+            _stateMachine.ChangeState(_inactiveState);
+
+            ExitGame();
+            return true;
+        }
+
+        private async UniTask PlayProgressAnimations()
+        {
+            UniTask[] tasks = new UniTask[_rouletteGameElements.Count];
+
+            for (int i = 0; i < _rouletteGameElements.Count; i++)
+            {
+                RouletteGameElementBase element = _rouletteGameElements[i];
+                tasks[i] = element.OnProgress(_currentZoneIndex);
+            }
+
+            await UniTask.WhenAll(tasks);
         }
 
         private void OnExitButtonClicked()
@@ -170,8 +196,7 @@ namespace UISystem.RouletteGame.Core
                                                   {
                                                       Debug.Log("Spent some coins to revive.");
                                                       _uiManager.ClosePanel(UIIDs.RevivePopup);
-                                                      ProgressToNextZone();
-                                                      _stateMachine.ChangeState(_idleState);
+                                                      ProgressToNextZone().Forget();
                                                   },
                                                   onCancel: () =>
                                                   {
@@ -205,6 +230,7 @@ namespace UISystem.RouletteGame.Core
         private void ExitGame()
         {
             Clear();
+
             gameObject.SetActive(false);
 
             OnExitGame?.Invoke();
@@ -212,6 +238,8 @@ namespace UISystem.RouletteGame.Core
 
         private void Clear()
         {
+            _currentZoneIndex = 0;
+
             foreach (RouletteGameElementBase element in _rouletteGameElements)
             {
                 element.Clear();
