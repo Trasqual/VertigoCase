@@ -100,8 +100,6 @@ namespace UISystem.RouletteGame.RewardBar
             {
                 Debug.Log("Claimed Item: " + item.ItemData.ItemName + " x" + item.Amount);
             }
-
-            _rewardVisuals.Clear();
         }
 
         public void Clear()
