@@ -27,7 +27,7 @@ This project is an example ui flow for a roulette game where the player clicks a
 * There are also smaller more generalized classes that could be used else where on the UI controlled by these pieces such as the WheelOfFortuneController, RadialLayoutGroup, CenteralizedScrollRect etc.
 * There are also a collection of sprite atlasses (2k resolution) and seperated canvases for performance optimization.
 
-### Below Figma file contains my scramblings before starting the project to understand the general flow and have a rough idea of the requirements and architecture
+### Below Figma file contains my scribblings before starting the project to understand the general flow and have a rough idea of the requirements and architecture
 https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-1&t=IOAqo8wFJMDINtzC-1
 ### Trello used for progress tracking
 https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3fdd34171edAF61FCBB/vertigo-case
