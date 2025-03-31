@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b94eb03597b4188a7fb64a2f4cea981, type: 3}
   m_Name: Customization_Cap
   m_EditorClassIdentifier: 
-  <RewardName>k__BackingField: Baseball Cap
-  _iconName: ui_icon_baseball_cap_easter
-  _atlas: {fileID: 100100200, guid: 18242c7fdf69dfb46ab7c539fc7a49f3, type: 3}
-  _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}
-  _rewardPermanentClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
-  <ItemID>k__BackingField: baseballCap
+  <Item>k__BackingField:
+    <ItemData>k__BackingField: {fileID: 11400000, guid: 796db42d9a96187448c08323bdee203b, type: 2}
+    <Amount>k__BackingField: 1
+  <BackgroundSprite>k__BackingField: {fileID: 21300000, guid: 9a1cb376792c3d14396f335a0f161d2e, type: 3}
+  <BackgroundColor>k__BackingField: {r: 0.9843137, g: 0.5555311, b: 0.03529409, a: 0.92156863}
+  _rewardClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}

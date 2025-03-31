@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using RewardSystem;
+using RewardSystem.Core;
 using UnityEngine;
 using UnityEngine.U2D;
 

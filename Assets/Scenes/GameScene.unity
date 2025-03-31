@@ -1704,7 +1704,7 @@ MonoBehaviour:
   _zoneDatas:
   - {fileID: 11400000, guid: e37eb3bc5600bc0488401df94b98a3ae, type: 2}
   - {fileID: 11400000, guid: 305e70f0ffa6a0748a3bc87415e9158e, type: 2}
-  - {fileID: 11400000, guid: bce8d6fdf7b442f4bb6a929559f83d43, type: 2}
+  - {fileID: 11400000, guid: cf14aa1af7586f44dba1c3abb8047110, type: 2}
   - {fileID: 11400000, guid: 3213af797b2f6b544be0d9e3301045b4, type: 2}
   - {fileID: 11400000, guid: 2a91a54867807de42af51aa8a88acae2, type: 2}
   - {fileID: 11400000, guid: a9bbe70fed0f7164b9e73114fe651ce6, type: 2}
@@ -2991,7 +2991,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
+  m_fontSize: 31.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3314,7 +3314,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 31.1
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

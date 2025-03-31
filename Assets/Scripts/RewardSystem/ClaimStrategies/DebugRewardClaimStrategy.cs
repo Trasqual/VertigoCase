@@ -1,3 +1,4 @@
+using RewardSystem.Core;
 using UnityEngine;
 
 namespace RewardSystem.ClaimStrategies
@@ -7,7 +8,7 @@ namespace RewardSystem.ClaimStrategies
     {
         public override void Execute(RewardBase reward, Vector3 position)
         {
-            Debug.Log("Claimed Reward: " + reward.RewardName + " at position: " + position);
+            Debug.Log("Claimed Reward: " + reward.Item.ItemData.ItemName + " at position: " + position);
         }
     }
 }

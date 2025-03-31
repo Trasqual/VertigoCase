@@ -1,4 +1,5 @@
 using EventSystem;
+using RewardSystem.Core;
 using ServiceLocatorSystem;
 using UnityEngine;
 

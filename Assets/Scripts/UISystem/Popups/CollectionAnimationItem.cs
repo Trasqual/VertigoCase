@@ -28,7 +28,7 @@ namespace UISystem.Popups
         public void Initialize(Vector3 endPosition, Sprite icon, CollectionAnimationSettings settings)
         {
             _image = GetComponent<Image>();
-            
+
             _endPosition = endPosition;
             _settings = settings;
             _image.sprite = icon;
@@ -46,10 +46,10 @@ namespace UISystem.Popups
             Vector3 spreadPosition = transform.position + new Vector3(randomPosition.x, randomPosition.y, 0);
 
             _sequence = DOTween.Sequence();
-            _sequence.AppendInterval(Random.Range(_settings.MinStartDelay, _settings.MaxStartDelay));
-            _sequence.Append(transform.DOMove(spreadPosition, _settings.SpreadDuration).SetEase(_settings.SpreadEase));
-            _sequence.Join(transform.DOScale(Vector3.one, _settings.SpreadDuration));
-            _sequence.Append(transform.DOMove(_endPosition, _settings.MoveToTargetDuration).SetEase(_settings.MoveToTargetEase));
+            _ = _sequence.AppendInterval(Random.Range(_settings.MinStartDelay, _settings.MaxStartDelay));
+            _ = _sequence.Append(transform.DOMove(spreadPosition, _settings.SpreadDuration).SetEase(_settings.SpreadEase));
+            _ = _sequence.Join(transform.DOScale(Vector3.one, _settings.SpreadDuration));
+            _ = _sequence.Append(transform.DOMove(_endPosition, _settings.MoveToTargetDuration).SetEase(_settings.MoveToTargetEase));
             try
             {
                 await _sequence.ToUniTask(cancellationToken: token);

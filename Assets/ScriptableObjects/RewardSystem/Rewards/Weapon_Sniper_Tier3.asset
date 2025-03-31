@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530648c274934421a30047cfabbb6f58, type: 3}
   m_Name: Weapon_Sniper_Tier3
   m_EditorClassIdentifier: 
-  <RewardName>k__BackingField: Sniper T3
-  _iconName: UI_Icon_Renders_tier3_sniper
-  _atlas: {fileID: 100100200, guid: febddc53e7dc08c4b8e9144b9049eace, type: 3}
-  _rewardTemporaryClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}
-  _rewardPermanentClaimStrategy: {fileID: 11400000, guid: eb6a773f6d0b0064a8a5bb4300fbab05, type: 2}
-  <ItemID>k__BackingField: sniperT3
+  <Item>k__BackingField:
+    <ItemData>k__BackingField: {fileID: 11400000, guid: 4a6e13da5aae7f541bd74fb708c13824, type: 2}
+    <Amount>k__BackingField: 1
+  <BackgroundSprite>k__BackingField: {fileID: 21300000, guid: 9a1cb376792c3d14396f335a0f161d2e, type: 3}
+  <BackgroundColor>k__BackingField: {r: 0.7519283, g: 0, b: 1, a: 0.9411765}
+  _rewardClaimStrategy: {fileID: 11400000, guid: 4547d0ac7a116dd418a9d0df5838709c, type: 2}

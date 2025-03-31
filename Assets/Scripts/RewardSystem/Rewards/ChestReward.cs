@@ -1,3 +1,4 @@
+using RewardSystem.Core;
 using UnityEngine;
 
 namespace RewardSystem.Rewards
@@ -7,7 +8,7 @@ namespace RewardSystem.Rewards
     {
         public override string GetValueText()
         {
-            return RewardName;
+            return Item.ItemData.ItemName;
         }
     }
 }

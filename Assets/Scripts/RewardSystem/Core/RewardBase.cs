@@ -1,34 +1,24 @@
+using ItemSystem;
 using RewardSystem.ClaimStrategies;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.U2D;
 
-namespace RewardSystem
+namespace RewardSystem.Core
 {
     public abstract class RewardBase : ScriptableObject
     {
-        [field: SerializeField] public string RewardName { get; private set; }
+        [field: SerializeField] public Item Item { get; private set; }
 
-        [SerializeField] private string _iconName;
+        [field: SerializeField] public Sprite BackgroundSprite { get; private set; }
 
-        [SerializeField] private SpriteAtlas _atlas;
+        [field: SerializeField] public Color BackgroundColor { get; private set; }
 
-        [SerializeField] private RewardClaimStrategyBase _rewardTemporaryClaimStrategy;
-
-        [SerializeField] private RewardClaimStrategyBase _rewardPermanentClaimStrategy;
-
-        public Sprite Icon => _atlas.GetSprite(_iconName);
+        [SerializeField] private RewardClaimStrategyBase _rewardClaimStrategy;
 
         public abstract string GetValueText();
 
-        public virtual void ClaimTemporary(Vector3 position)
+        public void Claim(Vector3 position)
         {
-            _rewardTemporaryClaimStrategy.Execute(this, position);
-        }
-
-        public virtual void ClaimPermanent(Vector3 position)
-        {
-            _rewardPermanentClaimStrategy.Execute(this, position);
+            _rewardClaimStrategy.Execute(this, position);
         }
     }
 }

@@ -1,3 +1,4 @@
+using RewardSystem.Core;
 using UnityEngine;
 
 namespace RewardSystem.Rewards

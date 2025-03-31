@@ -70,7 +70,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
         {
             int rewardIndex = _spinAnimation.GetClosestStopIndex();
 
-            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].ClaimTemporary(_rewardVisuals[rewardIndex].transform.position);
+            _zoneDatas[_currentZoneIndex].Rewards[rewardIndex].Claim(_rewardVisuals[rewardIndex].transform.position);
         }
 
         private void SetupVisuals()

@@ -1,13 +1,14 @@
+using RewardSystem.Core;
 using UnityEngine;
 
 namespace RewardSystem.Rewards
 {
     [CreateAssetMenu(fileName = "WeaponReward", menuName = "RewardSystem/Rewards/WeaponReward")]
-    public class WeaponRewardBase : ItemRewardBase
+    public class WeaponRewardBase : RewardBase
     {
         public override string GetValueText()
         {
-            return "";
+            return Item.ItemData.ItemName;;
         }
     }
 }
