@@ -49,4 +49,5 @@ https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3f
 - Could use addressables for better memory management and avoid using resources.
 - Zone progress bar should be a pooled horizontal scroll, considering there could be 100+ zones
 - Rewards and items use sort of a flyweight pattern but they could still be improved
+- Currently each zone is using a fixed set of rewards. These could be randomized if necessary.
   
