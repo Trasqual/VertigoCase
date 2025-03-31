@@ -38,6 +38,6 @@ https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-
 ![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/movie_16x9.gif)
 
 ### 4x3
-![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/movie_16x9.gif)
+![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/movie_4x3.gif)
 
   
