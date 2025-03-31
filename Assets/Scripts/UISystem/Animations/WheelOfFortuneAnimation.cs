@@ -11,12 +11,17 @@ namespace UISystem.Animations
         [SerializeField] private WheelOfFortuneAnimationSettings _settings;
 
         [SerializeField] private int _stopCount = 8;
-        
+
         private bool _isSpinning;
 
         public void SetStopCount(int stopCount)
         {
             _stopCount = stopCount;
+        }
+
+        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings)
+        {
+            _settings = wheelOfFortuneAnimationSettings;
         }
 
         public void Play(Action onComplete = null)

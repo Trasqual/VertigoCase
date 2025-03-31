@@ -28,9 +28,7 @@ namespace UISystem.RouletteGame.RouletteSpinner
 
         private RewardVisual[] _rewardVisuals;
 
-
         private int _currentZoneIndex;
-
 
         public override void Initialize(List<ZoneData> zoneDatas)
         {
@@ -49,6 +47,11 @@ namespace UISystem.RouletteGame.RouletteSpinner
             SetupVisuals();
         }
 
+        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings)
+        {
+            _spinAnimation.ApplySettings(wheelOfFortuneAnimationSettings);
+        }
+
         private void GenerateRewardVisuals()
         {
             _rewardVisuals = new RewardVisual[_zoneDatas[0].Rewards.Count];
@@ -59,7 +62,6 @@ namespace UISystem.RouletteGame.RouletteSpinner
                 _rewardVisuals[i] = visual;
             }
         }
-
 
         public void Spin()
         {
@@ -98,6 +100,14 @@ namespace UISystem.RouletteGame.RouletteSpinner
             _currentZoneIndex = currentIndex;
             SetupAnimation();
             SetupVisuals();
+        }
+
+        public override void Clear()
+        {
+            foreach (RewardVisual visual in _rewardVisuals)
+            {
+                _poolManager.ReleaseObject(visual);
+            }
         }
     }
 }

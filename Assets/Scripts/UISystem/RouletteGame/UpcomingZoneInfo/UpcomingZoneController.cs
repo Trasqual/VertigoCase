@@ -2,18 +2,18 @@ using System.Collections.Generic;
 using PoolingSystem;
 using ServiceLocatorSystem;
 using UISystem.RouletteGame.Data;
+using UISystem.RouletteGame.UpcomingZone;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace UISystem.RouletteGame.UpcomingZone
+namespace UISystem.RouletteGame.UpcomingZoneInfo
 {
     public class UpcomingZoneController : RouletteGameElementBase
     {
-        [FormerlySerializedAs("_upcomingZoneItemPrefab")][SerializeField] private UpcomingZoneInfoItem _upcomingZoneInfoItemPrefab;
+        [SerializeField] private UpcomingZoneInfoItem _upcomingZoneInfoItemPrefab;
 
         private List<ZoneData> _zoneDatas = new();
 
-        private List<UpcomingZoneInfoItem> _upcomingZoneItems = new();
+        private readonly List<UpcomingZoneInfoItem> _upcomingZoneItems = new();
 
         private ObjectPoolManager _poolManager;
 
@@ -28,7 +28,7 @@ namespace UISystem.RouletteGame.UpcomingZone
 
         public override void OnProgress(int currentIndex)
         {
-            ClearItems();
+            Clear();
             int foundCount = 0;
     
             for (int i = currentIndex + 1; i < _zoneDatas.Count; i++)
@@ -45,7 +45,7 @@ namespace UISystem.RouletteGame.UpcomingZone
             }
         }
 
-        private void ClearItems()
+        public override void Clear()
         {
             foreach (var item in _upcomingZoneItems)
             {

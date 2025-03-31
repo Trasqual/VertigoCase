@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace UISystem.RouletteGame.ZoneProgressBar
 {
-    public class ZoneCurrentProgressBarController : BaseZoneProgressBarController
+    public class ZoneCurrentProgressBarController : ZoneProgressBarControllerBase
     {
         protected override void SetupItems()
         {

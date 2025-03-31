@@ -20,9 +20,9 @@ namespace UISystem.RouletteGame.RewardBar
 
         [SerializeField] private CollectionAnimationSettings _animationSettings;
 
-        private Dictionary<string, Item> _temporaryItemDictionary = new();
+        private readonly Dictionary<string, Item> _temporaryItemDictionary = new();
 
-        private List<RewardVisual> _rewardVisuals = new();
+        private readonly List<RewardVisual> _rewardVisuals = new();
 
         private ObjectPoolManager _objectPoolManager;
         private EventManager _eventManager;
@@ -33,6 +33,11 @@ namespace UISystem.RouletteGame.RewardBar
             _eventManager = ServiceLocator.Instance.Get<EventManager>();
 
             _eventManager.AddListener<RewardClaimedEvent>(OnRewardCollected);
+        }
+
+        public void ApplySettings(CollectionAnimationSettings animationSettings)
+        {
+            _animationSettings = animationSettings;
         }
 
         private void OnRewardCollected(object eventData)
@@ -98,7 +103,7 @@ namespace UISystem.RouletteGame.RewardBar
             _rewardVisuals.Clear();
         }
 
-        public void ClearRewards()
+        public void Clear()
         {
             foreach (RewardVisual rewardVisual in _rewardVisuals)
             {

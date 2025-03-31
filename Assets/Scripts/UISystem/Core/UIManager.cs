@@ -28,9 +28,9 @@ namespace UISystem.Core
             _panelContainer = Resources.Load<PanelContainer>("PanelContainer");
         }
 
-        public T GetPanel<T>(string panelID) where T : UIPanelBase
+        public T GetActivePanel<T>(string panelID) where T : UIPanelBase
         {
-            return (T)_panelContainer.Panels.FirstOrDefault(p => p.GetPanelID() == panelID);
+            return (T)_activePanels.FirstOrDefault(p => p.GetPanelID() == panelID);
         }
 
         public void OpenPanel(string panelID, object data = null)

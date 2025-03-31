@@ -1,14 +1,16 @@
+using System;
 using System.Collections.Generic;
 using EventSystem;
 using ServiceLocatorSystem;
 using StateMachineSystem;
+using UISystem.Animations;
 using UISystem.Core;
 using UISystem.Popups;
 using UISystem.RouletteGame.Data;
 using UISystem.RouletteGame.RewardBar;
 using UISystem.RouletteGame.RouletteSpinner;
+using UISystem.RouletteGame.ZoneProgressBar;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
@@ -16,16 +18,29 @@ namespace UISystem.RouletteGame.Core
 {
     public class RouletteGameController : MonoBehaviour
     {
-        [field: SerializeField] public Button ExitButton { get; private set; }
-        [field: SerializeField] public Button SpinButton { get; private set; }
+        public Action OnExitGame;
 
-        [SerializeField] private List<ZoneData> _zoneDatas = new();
+        [field: Header("References")]
+        [field: SerializeField] public Button ExitButton { get; private set; }
+
+        [field: SerializeField] public Button SpinButton { get; private set; }
 
         [SerializeField] private List<RouletteGameElementBase> _rouletteGameElements = new();
 
         [SerializeField] private RouletteSpinnerController _spinnerController;
 
+        [SerializeField] private ZoneProgressBarControllerBase _progressBarController;
+        [SerializeField] private ZoneProgressBarControllerBase _currentProgressBarController;
+
         [SerializeField] private TemporaryRewardBarController _temporaryRewardBarController;
+
+        [Header("Animation Settings")]
+        [SerializeField] private ScrollAnimationSettings _scrollAnimationSettings;
+        [SerializeField] private WheelOfFortuneAnimationSettings _wheelOfFortuneAnimationSettings;
+        [SerializeField] private CollectionAnimationSettings _collectionAnimationSettings;
+
+        [Header("Datas")]
+        [SerializeField] private List<ZoneData> _zoneDatas = new();
 
         [Header("Bomb")]
         [SerializeField] private SpriteAtlas _atlas;
@@ -44,7 +59,7 @@ namespace UISystem.RouletteGame.Core
 
         private int _currentZoneIndex;
 
-        public void Awake()
+        public void Initialize()
         {
             _eventManager = ServiceLocator.Instance.Get<EventManager>();
 
@@ -58,6 +73,14 @@ namespace UISystem.RouletteGame.Core
 
             ExitButton.onClick.AddListener(OnExitButtonClicked);
             SpinButton.onClick.AddListener(OnSpinStarted);
+        }
+
+        private void ApplyAnimationSettings()
+        {
+            _spinnerController.ApplySettings(_wheelOfFortuneAnimationSettings);
+            _progressBarController.ApplySettings(_scrollAnimationSettings);
+            _currentProgressBarController.ApplySettings(_scrollAnimationSettings);
+            _temporaryRewardBarController.ApplySettings(_collectionAnimationSettings);
         }
 
         private void InitializeStateMachine()
@@ -105,7 +128,7 @@ namespace UISystem.RouletteGame.Core
                 _temporaryRewardBarController.ClaimRewardsPermanently();
                 _stateMachine.ChangeState(_inactiveState);
 
-                //TODO : Exit roulette game
+                ExitGame();
                 return;
             }
 
@@ -113,8 +136,6 @@ namespace UISystem.RouletteGame.Core
             {
                 element.OnProgress(_currentZoneIndex);
             }
-
-            _stateMachine.ChangeState(_idleState);
         }
 
         private void OnExitButtonClicked()
@@ -124,7 +145,7 @@ namespace UISystem.RouletteGame.Core
                                                           {
                                                               _temporaryRewardBarController.ClaimRewardsPermanently();
                                                               _uiManager.ClosePanel(UIIDs.AreYouSurePopup);
-                                                              _stateMachine.ChangeState(_inactiveState);
+                                                              ExitGame();
                                                           },
                                                           onCancel: () =>
                                                           {
@@ -143,6 +164,8 @@ namespace UISystem.RouletteGame.Core
         {
             RevivePopupData revivePopupData = new("Oh no! The bomb is about to explode!",
                                                   icon: _atlas.GetSprite(_bombSpriteName),
+                                                  reviveButtonText: "Revive",
+                                                  cancelButtonText: "Quit",
                                                   onRevive: () =>
                                                   {
                                                       Debug.Log("Spent some coins to revive.");
@@ -152,15 +175,19 @@ namespace UISystem.RouletteGame.Core
                                                   },
                                                   onCancel: () =>
                                                   {
-                                                      AreYouSurePopupData areYouSurePopupData = new("Are you sure you want to cancel? You will lose all your rewards.",
+                                                      RevivePopup revivePopup = _uiManager.GetActivePanel<RevivePopup>(UIIDs.RevivePopup);
+                                                      revivePopup.PauseCountdown();
+                                                      AreYouSurePopupData areYouSurePopupData = new("Are you sure you want to quit? You will lose all your rewards.",
                                                                                                     onConfirm: () =>
                                                                                                     {
-                                                                                                        _temporaryRewardBarController.ClearRewards();
                                                                                                         _uiManager.ClosePanel(UIIDs.AreYouSurePopup);
+                                                                                                        _uiManager.ClosePanel(UIIDs.RevivePopup);
+                                                                                                        ExitGame();
                                                                                                     },
                                                                                                     onCancel: () =>
                                                                                                     {
                                                                                                         _uiManager.ClosePanel(UIIDs.AreYouSurePopup);
+                                                                                                        revivePopup.ResumeCountdown();
                                                                                                     });
 
                                                       ShowAreYouSurePopup(areYouSurePopupData);
@@ -175,10 +202,28 @@ namespace UISystem.RouletteGame.Core
             uiManager.OpenPanel(UIIDs.AreYouSurePopup, data);
         }
 
+        private void ExitGame()
+        {
+            Clear();
+            gameObject.SetActive(false);
+
+            OnExitGame?.Invoke();
+        }
+
+        private void Clear()
+        {
+            foreach (RouletteGameElementBase element in _rouletteGameElements)
+            {
+                element.Clear();
+            }
+
+            _temporaryRewardBarController.Clear();
+        }
+
         private void UnsubscribeToEvents()
         {
-            _eventManager.RemoveListener<CollectionAnimationFinishedEvent>(OnCollectionAnimationFinished);
-            _eventManager.RemoveListener<BombClaimedEvent>(OnBombClaimed);
+            _eventManager?.RemoveListener<CollectionAnimationFinishedEvent>(OnCollectionAnimationFinished);
+            _eventManager?.RemoveListener<BombClaimedEvent>(OnBombClaimed);
         }
 
         private void OnDisable()

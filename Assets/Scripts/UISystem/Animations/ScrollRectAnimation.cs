@@ -23,6 +23,11 @@ namespace Utilities.UI
             _content = _scrollRect.content;
         }
 
+        public void ApplySettings(ScrollAnimationSettings scrollAnimationSettings)
+        {
+            _scrollAnimationSettings = scrollAnimationSettings;
+        }
+
         public void ScrollToObject(int index, Action onComplete = null)
         {
             if (index < 0 || index >= _scrollRect.content.childCount || _scrollRect.content.childCount == 0)

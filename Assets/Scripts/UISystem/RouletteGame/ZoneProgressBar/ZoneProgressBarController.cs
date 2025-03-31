@@ -1,6 +1,6 @@
 namespace UISystem.RouletteGame.ZoneProgressBar
 {
-    public class ZoneProgressBarController : BaseZoneProgressBarController
+    public class ZoneProgressBarController : ZoneProgressBarControllerBase
     {
         protected override void SetupItems()
         {

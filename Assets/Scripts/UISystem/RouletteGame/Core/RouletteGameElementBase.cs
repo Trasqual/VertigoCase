@@ -8,5 +8,7 @@ namespace UISystem.RouletteGame
     {
         public abstract void Initialize(List<ZoneData> zoneDatas);
         public abstract void OnProgress(int currentIndex);
+
+        public abstract void Clear();
     }
 }

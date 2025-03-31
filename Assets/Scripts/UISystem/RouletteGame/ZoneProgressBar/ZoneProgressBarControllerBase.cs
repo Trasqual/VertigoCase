@@ -7,7 +7,7 @@ using Utilities.UI;
 
 namespace UISystem.RouletteGame.ZoneProgressBar
 {
-    public abstract class BaseZoneProgressBarController : RouletteGameElementBase
+    public abstract class ZoneProgressBarControllerBase : RouletteGameElementBase
     {
         [SerializeField] protected ZoneProgressItem _zoneItemPrefab;
         [SerializeField] protected ScrollRectAnimation _scrollAnimation;
@@ -24,6 +24,11 @@ namespace UISystem.RouletteGame.ZoneProgressBar
             SetupItems();
         }
 
+        public void ApplySettings(ScrollAnimationSettings scrollAnimationSettings)
+        {
+            _scrollAnimation.ApplySettings(scrollAnimationSettings);
+        }
+
         protected abstract void SetupItems();
 
         protected void CreateItem(int zoneNo)
@@ -36,5 +41,17 @@ namespace UISystem.RouletteGame.ZoneProgressBar
         }
 
         public abstract override void OnProgress(int currentIndex);
+
+        public override void Clear()
+        {
+            foreach (ZoneProgressItem item in _zoneItems)
+            {
+                _poolManager.ReleaseObject(item);
+            }
+
+            _zoneItems.Clear();
+
+            _content.localPosition = Vector3.zero;
+        }
     }
 }
