@@ -14,7 +14,7 @@ This project is an example ui flow for a roulette game where the player clicks a
 - When the game ends one way or another the game pieces get cleared and roulette game ui closes.
 - Player can play again by clicking the start button.
 
-## Contents
+## Content Summary
 * To achieve a somewhat realistic flow, the project utilizes **Service Locator Pattern**.
 * The Service Locator holds references to Manager classes such as UIManager, EventManager, ObjectPoolManager etc.
 * The SceneInstaller class works with InitializeBeforeSceneLoad to get the managers up and running.
@@ -25,6 +25,7 @@ This project is an example ui flow for a roulette game where the player clicks a
    - Roulette spinner; which is at the center of the screen and handles the spinning animation and reward selection of the gun chamber.
 * These pieces are all initialized and monitored by RouletteGameController which holds references for each of these items and oversees the general progression.
 * There are also smaller more generalized classes that could be used else where on the UI controlled by these pieces such as the WheelOfFortuneController, RadialLayoutGroup, CenteralizedScrollRect etc.
+* There are also a collection of sprite atlasses (2k resolution) and seperated canvases for performance optimization.
 
 ### Below Figma file contains my scramblings before starting the project to understand the general flow and have a rough idea of the requirements and architecture
 https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-1&t=IOAqo8wFJMDINtzC-1
