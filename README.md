@@ -58,4 +58,5 @@ https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3f
 - Rewards and items use sort of a flyweight pattern but they could still be improved
 - Currently each zone is using a fixed set of rewards. These could be randomized if necessary.
 - Could add better particle effects and polish overall.
+- Could create a tool for automatically generating zone data and rewards.
   
