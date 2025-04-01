@@ -32,6 +32,9 @@ https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-
 ### Trello used for progress tracking
 https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3fdd34171edAF61FCBB/vertigo-case
 
+### Code Structure
+![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/CodeStructure.png)
+
 ## GIFs of different resolutions
 
 ### 20x9
@@ -42,6 +45,9 @@ https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3f
 
 ### 4x3
 ![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/movie_4x3.gif)
+
+### Bomb Sequence
+![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/Bomb_1920x1080.gif)
 
 ## What could be improved:
 - The Roulette Game Controller shouldn't hold concrete references to it's elements, so they could be easily changed.
