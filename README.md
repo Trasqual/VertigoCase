@@ -18,14 +18,14 @@ This project is an example ui flow for a roulette game where the player clicks a
 * To achieve a somewhat realistic flow, the project utilizes **Service Locator Pattern**.
 * The Service Locator holds references to Manager classes such as UIManager, EventManager, ObjectPoolManager etc.
 * The SceneInstaller class works with InitializeBeforeSceneLoad to get the managers up and running.
-* The roulette game ui is separated into four main parts as following:
+* The roulette game ui follows a top to bottom hierarchy and is separated into four elementes and a controller as following:
    - Zone progress bar; which is at the top of the screen. It shows current progress of the game.
    - Upcoming zone bar; which is at the top right side of the screen. It shows the upcoming safe zones.
    - Temporary reward bar; which is at the left side of the screen, showing the rewards collected so far.
    - Roulette spinner; which is at the center of the screen and handles the spinning animation and reward selection of the gun chamber.
-* These pieces are all initialized and monitored by RouletteGameController which holds references for each of these items and oversees the general progression.
-* There are also smaller more generalized classes that could be used else where on the UI controlled by these pieces such as the WheelOfFortuneController, RadialLayoutGroup, CenteralizedScrollRect etc.
-* There are also a collection of sprite atlasses (2k resolution) and seperated canvases for performance optimization.
+* These elements are all initialized and monitored by RouletteGameController which holds references for each of these items and oversees the general progression.
+* There are also smaller more generalized classes that could be used else where on the UI controlled by these pieces such as the **WheelOfFortuneController, RadialLayoutGroup, CenteralizedScrollRect** etc.
+* And a collection of sprite atlasses (2k resolution) and seperated canvases for performance optimization. Balancing the cpu/gpu loads and mobile device memory.
 
 ### Below Figma file contains my scribblings before starting the project to understand the general flow and have a rough idea of the requirements and architecture
 https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-1&t=IOAqo8wFJMDINtzC-1
@@ -33,6 +33,7 @@ https://www.figma.com/board/weeU5XHxucsJd0gO460Kam/Vertigo-Case-Notes?node-id=0-
 https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3fdd34171edAF61FCBB/vertigo-case
 
 ### Code Structure
+https://www.figma.com/board/XUzgcAOrunKE84Fs6SspjA/VertigoCaseCodeStructure?node-id=0-1&t=j4slLLpiVjAVzXCc-1
 ![](https://github.com/Trasqual/VertigoCase/blob/main/Recordings/CodeStructure.png)
 
 ## GIFs of different resolutions
@@ -59,4 +60,5 @@ https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3f
 - Currently each zone is using a fixed set of rewards. These could be randomized if necessary.
 - Could add better particle effects and polish overall.
 - Could create a tool for automatically generating zone data and rewards.
+- Batches to Canvas overdraw ratio could be improved.
   
