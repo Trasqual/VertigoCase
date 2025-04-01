@@ -4,14 +4,16 @@ using Cysharp.Threading.Tasks;
 using EventSystem;
 using ServiceLocatorSystem;
 using StateMachineSystem;
+using StateMachineSystem.RouletteGameStates;
 using UISystem.Animations;
 using UISystem.Core;
 using UISystem.Popups;
+using UISystem.RewardBar;
 using UISystem.RouletteGame.Data;
-using UISystem.RouletteGame.RewardBar;
 using UISystem.RouletteGame.RouletteSpinner;
 using UISystem.RouletteGame.ZoneProgressBar;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
@@ -37,7 +39,7 @@ namespace UISystem.RouletteGame.Core
 
         [Header("Animation Settings")]
         [SerializeField] private ScrollAnimationSettings _scrollAnimationSettings;
-        [SerializeField] private WheelOfFortuneAnimationSettings _wheelOfFortuneAnimationSettings;
+        [FormerlySerializedAs("_wheelOfFortuneAnimationSettings")][SerializeField] private WheelOfFortuneSpinAnimationSettings _wheelOfFortuneSpinAnimationSettings;
         [SerializeField] private WheelOfFortuneSpawnPunchAnimationSettings _wheelOfFortunePunchAnimationSettings;
         [SerializeField] private CollectionAnimationSettings _collectionAnimationSettings;
 
@@ -81,7 +83,7 @@ namespace UISystem.RouletteGame.Core
 
         private void ApplyAnimationSettings()
         {
-            _spinnerController.ApplySettings(_wheelOfFortuneAnimationSettings, _wheelOfFortunePunchAnimationSettings);
+            _spinnerController.ApplySettings(_wheelOfFortuneSpinAnimationSettings, _wheelOfFortunePunchAnimationSettings);
             _progressBarController.ApplySettings(_scrollAnimationSettings);
             _currentProgressBarController.ApplySettings(_scrollAnimationSettings);
             _temporaryRewardBarController.ApplySettings(_collectionAnimationSettings);

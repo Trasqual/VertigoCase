@@ -5,8 +5,8 @@ using PoolingSystem;
 using ServiceLocatorSystem;
 using TMPro;
 using UISystem.Animations;
+using UISystem.RewardBar;
 using UISystem.RouletteGame.Data;
-using UISystem.RouletteGame.RewardBar;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -51,10 +51,10 @@ namespace UISystem.RouletteGame.RouletteSpinner
             SetupVisuals();
         }
 
-        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings,
+        public void ApplySettings(WheelOfFortuneSpinAnimationSettings wheelOfFortuneSpinAnimationSettings,
                                   WheelOfFortuneSpawnPunchAnimationSettings wheelOfFortuneSpawnPunchAnimationSettings)
         {
-            _spinAnimation.ApplySettings(wheelOfFortuneAnimationSettings);
+            _spinAnimation.ApplySettings(wheelOfFortuneSpinAnimationSettings);
             _punchAnimationSettings = wheelOfFortuneSpawnPunchAnimationSettings;
         }
 

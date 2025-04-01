@@ -1833,13 +1833,13 @@ MonoBehaviour:
   _currentProgressBarController: {fileID: 586877338}
   _temporaryRewardBarController: {fileID: 2140716373}
   _scrollAnimationSettings: {fileID: 11400000, guid: 6618a2d73a645cd41a5a2b9adb570063, type: 2}
-  _wheelOfFortuneAnimationSettings: {fileID: 11400000, guid: 5f1f83a27a1fbff4a8073fff83928701, type: 2}
+  _wheelOfFortuneSpinAnimationSettings: {fileID: 11400000, guid: 5f1f83a27a1fbff4a8073fff83928701, type: 2}
   _wheelOfFortunePunchAnimationSettings: {fileID: 11400000, guid: da5deeabec62cbb4d874f969d679e290, type: 2}
   _collectionAnimationSettings: {fileID: 11400000, guid: 32a653f6674825d4e810abde1a2dea29, type: 2}
   _zoneDatas:
   - {fileID: 11400000, guid: e37eb3bc5600bc0488401df94b98a3ae, type: 2}
   - {fileID: 11400000, guid: 305e70f0ffa6a0748a3bc87415e9158e, type: 2}
-  - {fileID: 11400000, guid: cf14aa1af7586f44dba1c3abb8047110, type: 2}
+  - {fileID: 11400000, guid: bce8d6fdf7b442f4bb6a929559f83d43, type: 2}
   - {fileID: 11400000, guid: 3213af797b2f6b544be0d9e3301045b4, type: 2}
   - {fileID: 11400000, guid: 2a91a54867807de42af51aa8a88acae2, type: 2}
   - {fileID: 11400000, guid: a9bbe70fed0f7164b9e73114fe651ce6, type: 2}
@@ -2870,7 +2870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed3e2205c3c7b84692e6209e399b8f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upcomingZoneInfoItemPrefab: {fileID: 2459088059932966697, guid: 18618be7e96f32242998f8cdcbbb362b, type: 3}
+  _upcomingZoneItemPrefab: {fileID: 2459088059932966697, guid: 18618be7e96f32242998f8cdcbbb362b, type: 3}
 --- !u!1 &1743348840
 GameObject:
   m_ObjectHideFlags: 0

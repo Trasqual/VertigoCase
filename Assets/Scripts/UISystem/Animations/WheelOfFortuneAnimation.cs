@@ -8,7 +8,7 @@ namespace UISystem.Animations
 {
     public class WheelOfFortuneAnimation : MonoBehaviour
     {
-        [SerializeField] private WheelOfFortuneAnimationSettings _settings;
+        [SerializeField] private WheelOfFortuneSpinAnimationSettings _settings;
 
         [SerializeField] private int _stopCount = 8;
 
@@ -19,9 +19,9 @@ namespace UISystem.Animations
             _stopCount = stopCount;
         }
 
-        public void ApplySettings(WheelOfFortuneAnimationSettings wheelOfFortuneAnimationSettings)
+        public void ApplySettings(WheelOfFortuneSpinAnimationSettings wheelOfFortuneSpinAnimationSettings)
         {
-            _settings = wheelOfFortuneAnimationSettings;
+            _settings = wheelOfFortuneSpinAnimationSettings;
         }
 
         public void Play(Action onComplete = null)

@@ -5,7 +5,7 @@ using UISystem.RouletteGame.Data;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Utilities.UI
+namespace UISystem.Animations
 {
     [RequireComponent(typeof(ScrollRect))]
     public class ScrollRectAnimation : MonoBehaviour

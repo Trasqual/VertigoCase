@@ -98,6 +98,10 @@ namespace UISystem.Popups
             _descriptionText.SetText("Are you sure?");
             _reviveButtonText.SetText("Confirm");
             _cancelButtonText.SetText("Cancel");
+            _countdownText.SetText("");
+            
+            _countdownText.gameObject.SetActive(true);
+            _reviveButton.gameObject.SetActive(true);
         }
 
         public void PauseCountdown()

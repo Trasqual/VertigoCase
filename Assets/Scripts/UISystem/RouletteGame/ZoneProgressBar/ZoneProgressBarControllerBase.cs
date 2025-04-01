@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using PoolingSystem;
 using ServiceLocatorSystem;
+using UISystem.Animations;
 using UISystem.RouletteGame.Data;
 using UnityEngine;
 using Utilities.UI;
