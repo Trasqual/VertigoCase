@@ -52,6 +52,7 @@ https://trello.com/invite/b/67e2d112605701e5272cc892/ATTIf8fb2475128866b0af82e3f
 ## What could be improved:
 - The Roulette Game Controller shouldn't hold concrete references to it's elements, so they could be easily changed.
 - It also doesn't fit in the MVP/MVC pattern.
+- Wheel Of Fortune could work with rewards of different weights.
 - Could use addressables for better memory management and avoid using resources.
 - Zone progress bar should be a pooled horizontal scroll, considering there could be 100+ zones
 - Rewards and items use sort of a flyweight pattern but they could still be improved
